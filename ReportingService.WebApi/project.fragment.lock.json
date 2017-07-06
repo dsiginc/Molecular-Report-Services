@@ -8,6 +8,7 @@
         "bin/Debug/ReportGeneratorNormal.dll": {}
       },
       "runtime": {
+        "../Lib/Telerik.Reporting.dll": {},
         "bin/Debug/ReportGeneratorNormal.dll": {}
       },
       "contentFiles": {

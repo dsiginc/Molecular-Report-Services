@@ -16,10 +16,26 @@ namespace ReportingService.WebApi.Controllers
         public async Task<string> CreateReport([FromBody]ReportInfo reportInfo)
         {
             ReportCreator report = new ReportCreator();
-            return await report.GenerateReport(reportInfo.Template, reportInfo.ReportData);
+            return await report.GenerateReport(reportInfo.Template, reportInfo.CaseQualitativeData);
 
         }
 
-        
+        // POST api/values
+        [HttpPost("CreateQuantitativeReport")]
+        public async Task<string> CreateQuantitativeReport([FromBody]QuantitativeReportInfo reportInfo)
+        {
+            ReportCreator report = new ReportCreator();
+            return await report.GenerateQuantiativeReport(reportInfo.Template, reportInfo.CaseQuantitativeData);
+
+        }
+
+
+        [HttpPost("CreateSequenceReport")]
+        public async Task<string> CreateSequenceReport([FromBody]SequenceReportInfo reportInfo)
+        {
+            ReportCreator report = new ReportCreator();
+            return await report.GenerateSequenceReport(reportInfo.Template, reportInfo.CaseSequenceData);
+
+        }
     }
 }

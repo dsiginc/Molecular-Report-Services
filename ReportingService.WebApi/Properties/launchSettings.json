@@ -19,7 +19,7 @@
     "ReportingService.WebApi": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "http://localhost:5000/api/reportservice",
+      "launchUrl": "http://localhost:5018/api/report",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

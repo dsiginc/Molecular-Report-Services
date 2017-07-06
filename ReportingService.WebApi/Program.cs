@@ -14,8 +14,8 @@ namespace ReportingService.WebApi
         public static void Main(string[] args)
         {
             var builder = new ConfigurationBuilder()
-              .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
-              
+             .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+
 
             var Configuration = builder.Build();
             var baseUrl = Configuration["baseurl"];

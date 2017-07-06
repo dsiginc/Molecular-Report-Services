@@ -11,9 +11,20 @@ namespace ReportingService.WebApi.Controllers
 
         public ReportInfo()
             {
-            ReportData = new CaseQualitativeData();
+            CaseQualitativeData = new CaseQualitativeData();
             }
         public string Template { get; set; }
-        public CaseQualitativeData ReportData { get; set; }
+        public CaseQualitativeData CaseQualitativeData { get; set; }
+    }
+
+    public class QuantiativeReportInfo
+    {
+
+        public QuantiativeReportInfo()
+        {
+            CaseQuantitativeData = new CaseQuantitativeData();
+        }
+        public string Template { get; set; }
+        public CaseQuantitativeData CaseQuantitativeData { get; set; }
     }
 }
