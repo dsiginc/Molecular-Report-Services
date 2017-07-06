@@ -87,5 +87,6 @@ namespace ReportGenerator
       
         public string NAType { get; set; }
 
+        public string ReceivedDate { get; set; }
     }
 }

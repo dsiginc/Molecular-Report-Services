@@ -16,11 +16,9 @@ namespace ReportGenerator
 
         public string ReasonForOverridden { get; set; }
 
-        public long PathologistId { get; set; }
+        public string DateSigned { get; set; }
 
-        public DateTime? DateSigned { get; set; }
-
-        public DateTime? DateCompleted { get; set; }
+        public string DateCompleted { get; set; }
 
         public string Icd { get; set; }
 
@@ -28,31 +26,29 @@ namespace ReportGenerator
 
         public string Loinc { get; set; }
 
-        public long StatusId { get; set; }
-
-        public bool Stat { get; set; }
-
-     
         public string ResultSummary { get; set; }
-     
+
         public int RepeatSequence { get; set; }
-       
+
         public string TestName { get; set; }
-       
+
         public string Code { get; set; }
-      
+
         public string Status { get; set; }
-      
+
         public string Result { get; set; }
-      
-        public bool StatStatus { get; set; }
-       
-        public string SpecimenNumber { get; set; }
-       
-        public bool Repeated { get; set; }
-        
 
 
+        public string Pathologist { get; set; }
 
+        public string Interpretation { get; set; }
+
+        public string Methodology { get; set; }
+
+        public string References { get; set; }
+
+        public string Background { get; set; }
+
+        public byte[] PathologistSignature { get; set; }
     }
 }

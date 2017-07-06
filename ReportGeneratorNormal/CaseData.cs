@@ -51,5 +51,10 @@ namespace ReportGenerator
 
 
         public string SecondaryPhysicianname { get; set; }
+
+
+        public string PathologistName { get; set; }
+
+        public string PhysicianAddress { get; set; }
     }
 }
