@@ -37,5 +37,12 @@ namespace ReportingService.WebApi.Controllers
             return await report.GenerateSequenceReport(reportInfo.Template, reportInfo.CaseSequenceData);
 
         }
+        [HttpPost("CreateRunProtocolReport")]
+        public async Task<string> CreateRunProtocolReport([FromBody]RunProtocalsDataInfo runProtocalsDataInfo)
+        {
+            ReportCreator report = new ReportCreator();
+            return await report.GenerateRunProtocalsReport(runProtocalsDataInfo.Template, runProtocalsDataInfo.RunProtocalsData);
+
+        }
     }
 }

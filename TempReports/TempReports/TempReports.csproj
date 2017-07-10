@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RunProtocalsData.cs" />
     <Compile Include="CaseData.cs" />
     <Compile Include="CaseQualitativeData.cs" />
     <Compile Include="CaseQuantitativeData.cs" />

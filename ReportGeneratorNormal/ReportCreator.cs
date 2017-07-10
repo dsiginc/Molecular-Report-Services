@@ -150,5 +150,41 @@ namespace ReportGenerator
             }
             return response;
         }
+        public async Task<string> GenerateRunProtocalsReport(string template, List<RunProtocalsData> dataSource)
+        {
+
+            string filePath = System.Configuration.ConfigurationManager.AppSettings["ReportTempLocation"].ToString() + "\\" + Guid.NewGuid().ToString() + "_" + DateTime.Now.ToString("yyyyMMdd_HH_mm_ss") + ".trdx";
+
+            XmlReaderSettings settings = new XmlReaderSettings();
+            settings.IgnoreWhitespace = true;
+
+            Telerik.Reporting.Report report = null;
+
+            byte[] templateBytes = Convert.FromBase64String(template);
+            File.WriteAllBytes(filePath, templateBytes);
+
+            using (XmlReader xmlReader = XmlReader.Create(filePath, settings))
+            {
+                ReportXmlSerializer xmlSerializer = new ReportXmlSerializer();
+                report = (Telerik.Reporting.Report)xmlSerializer.Deserialize(xmlReader);
+            }
+
+            report.DataSource = dataSource;
+
+
+            ReportProcessor reportProcessor = new ReportProcessor();
+            InstanceReportSource instanceReportSource = new InstanceReportSource();
+            instanceReportSource.ReportDocument = report;
+            RenderingResult result = reportProcessor.RenderReport("PDF", instanceReportSource, null);
+
+            byte[] bytes = result.DocumentBytes;
+            string response = Convert.ToBase64String(bytes);
+
+            if (File.Exists(filePath))
+            {
+                File.Delete(filePath);
+            }
+            return response;
+        }
     }
 }
