@@ -38,10 +38,10 @@ namespace ReportingService.WebApi.Controllers
 
         }
         [HttpPost("CreateRunProtocolReport")]
-        public async Task<string> CreateRunProtocolReport([FromBody]RunProtocalsDataInfo runProtocalsDataInfo)
+        public async Task<string> CreateRunProtocolReport([FromBody]RunProtocolsDataInfo runProtocolsDataInfo)
         {
             ReportCreator report = new ReportCreator();
-            return await report.GenerateRunProtocalsReport(runProtocalsDataInfo);
+            return await report.GenerateRunProtocolsReport(runProtocolsDataInfo);
 
         }
     }

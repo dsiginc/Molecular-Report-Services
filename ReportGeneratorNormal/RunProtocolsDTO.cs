@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ReportGenerator
 {
-    public class RunProtocalsDTO
+    public class RunProtocolsDTO
     {
         public int StepNumber { get; set; }
         public string Description { get; set; }

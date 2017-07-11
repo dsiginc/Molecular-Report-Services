@@ -150,7 +150,7 @@ namespace ReportGenerator
             }
             return response;
         }
-        public async Task<string> GenerateRunProtocalsReport(RunProtocalsDataInfo dataSource)
+        public async Task<string> GenerateRunProtocolsReport(RunProtocolsDataInfo dataSource)
         {
 
             string filePath = System.Configuration.ConfigurationManager.AppSettings["ReportTempLocation"].ToString() + "\\" + Guid.NewGuid().ToString() + "_" + DateTime.Now.ToString("yyyyMMdd_HH_mm_ss") + ".trdx";

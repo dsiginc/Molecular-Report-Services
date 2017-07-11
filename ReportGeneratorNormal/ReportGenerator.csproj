@@ -54,8 +54,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuantitativeResults.cs" />
     <Compile Include="ReportCreator.cs" />
-    <Compile Include="RunProtocalsDataInfo.cs" />
-    <Compile Include="RunProtocalsDTO.cs" />
+    <Compile Include="RunProtocolsDataInfo.cs" />
+    <Compile Include="RunProtocolsDTO.cs" />
     <Compile Include="SpecimenInfoData.cs" />
     <Compile Include="VariantsData.cs" />
   </ItemGroup>

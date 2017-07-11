@@ -49,7 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RunProtocalsData.cs" />
+    <Compile Include="RunProtocolsData.cs" />
     <Compile Include="CaseData.cs" />
     <Compile Include="CaseQualitativeData.cs" />
     <Compile Include="CaseQuantitativeData.cs" />
@@ -58,6 +58,7 @@
     <Compile Include="PatientInfoData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuantitativeResults.cs" />
+    <Compile Include="RunProtocolsDataInfo.cs" />
     <Compile Include="SpecimenInfoData.cs" />
     <Compile Include="VariantsData.cs" />
   </ItemGroup>

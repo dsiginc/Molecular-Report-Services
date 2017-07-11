@@ -6,17 +6,17 @@ using ReportGenerator;
 
 namespace ReportGenerator
 {
-    public class RunProtocalsDataInfo
+    public class RunProtocolsDataInfo
     {
 
-        public RunProtocalsDataInfo()
+        public RunProtocolsDataInfo()
         {
-            RunProtocals = new List<RunProtocalsDTO>();
+            RunProtocols = new List<RunProtocolsDTO>();
         }
         public string Template { get; set; }
         public string RunNumber { get; set; }
         public string WorklistName { get; set; }
-        public List<RunProtocalsDTO> RunProtocals { get; set; }
+        public List<RunProtocolsDTO> RunProtocols { get; set; }
     }
 
 

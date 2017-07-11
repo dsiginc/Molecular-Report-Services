@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Molecular.DataAccess.AccessionService.Objects
 {
-    public class RunProtocalsData
+    public class RunProtocolsDTO
     {
         public int StepNumber { get; set; }
         public string Description { get; set; }
