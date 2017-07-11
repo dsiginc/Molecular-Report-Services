@@ -175,7 +175,7 @@ namespace ReportGenerator
             RenderingResult result = reportProcessor.RenderReport("PDF", instanceReportSource, null);
 
             var reportLocation = ConfigurationManager.AppSettings["ReportTempLocation"];
-            string reportName = reportLocation + "//" + dataSource.RunNumber + "_RunProtocols" + DateTime.Now.ToString("yyyyMMdd") + ".pdf";
+            string reportName = reportLocation + "//" + dataSource.RunId + "_RunProtocols" + DateTime.Now.ToString("yyyyMMdd") + ".pdf";
             using (FileStream fs = new FileStream(reportName, FileMode.Create))
             {
                 fs.Write(result.DocumentBytes, 0, result.DocumentBytes.Length);
@@ -184,10 +184,6 @@ namespace ReportGenerator
             byte[] bytes = result.DocumentBytes;
             string response = Convert.ToBase64String(bytes);
 
-            if (File.Exists(filePath))
-            {
-                File.Delete(filePath);
-            }
             return response;
         }
     }
