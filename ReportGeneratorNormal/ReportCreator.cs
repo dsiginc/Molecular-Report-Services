@@ -174,6 +174,13 @@ namespace ReportGenerator
             instanceReportSource.ReportDocument = report;
             RenderingResult result = reportProcessor.RenderReport("PDF", instanceReportSource, null);
 
+            var reportLocation = ConfigurationManager.AppSettings["ReportTempLocation"];
+            string reportName = reportLocation + "//" + dataSource.RunNumber + "_RunProtocols" + DateTime.Now.ToString("yyyyMMdd") + ".pdf";
+            using (FileStream fs = new FileStream(reportName, FileMode.Create))
+            {
+                fs.Write(result.DocumentBytes, 0, result.DocumentBytes.Length);
+            }
+
             byte[] bytes = result.DocumentBytes;
             string response = Convert.ToBase64String(bytes);
 
