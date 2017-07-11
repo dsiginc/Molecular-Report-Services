@@ -153,15 +153,12 @@ namespace ReportGenerator
         public async Task<string> GenerateRunProtocolsReport(RunProtocolsDataInfo dataSource)
         {
 
-            string filePath = System.Configuration.ConfigurationManager.AppSettings["ReportTempLocation"].ToString() + "\\" + Guid.NewGuid().ToString() + "_" + DateTime.Now.ToString("yyyyMMdd_HH_mm_ss") + ".trdx";
-
+            string filePath = System.Configuration.ConfigurationManager.AppSettings["ReportTemplateLocation"].ToString() + "\\" + dataSource.Template;
+           
             XmlReaderSettings settings = new XmlReaderSettings();
             settings.IgnoreWhitespace = true;
 
             Telerik.Reporting.Report report = null;
-
-            byte[] templateBytes = Convert.FromBase64String(dataSource.Template);
-            File.WriteAllBytes(filePath, templateBytes);
 
             using (XmlReader xmlReader = XmlReader.Create(filePath, settings))
             {
