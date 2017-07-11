@@ -41,7 +41,7 @@ namespace ReportingService.WebApi.Controllers
         public async Task<string> CreateRunProtocolReport([FromBody]RunProtocalsDataInfo runProtocalsDataInfo)
         {
             ReportCreator report = new ReportCreator();
-            return await report.GenerateRunProtocalsReport(runProtocalsDataInfo.Template, runProtocalsDataInfo.RunProtocalsData);
+            return await report.GenerateRunProtocalsReport(runProtocalsDataInfo);
 
         }
     }

@@ -150,7 +150,7 @@ namespace ReportGenerator
             }
             return response;
         }
-        public async Task<string> GenerateRunProtocalsReport(string template, List<RunProtocalsData> dataSource)
+        public async Task<string> GenerateRunProtocalsReport(RunProtocalsDataInfo dataSource)
         {
 
             string filePath = System.Configuration.ConfigurationManager.AppSettings["ReportTempLocation"].ToString() + "\\" + Guid.NewGuid().ToString() + "_" + DateTime.Now.ToString("yyyyMMdd_HH_mm_ss") + ".trdx";
@@ -160,7 +160,7 @@ namespace ReportGenerator
 
             Telerik.Reporting.Report report = null;
 
-            byte[] templateBytes = Convert.FromBase64String(template);
+            byte[] templateBytes = Convert.FromBase64String(dataSource.Template);
             File.WriteAllBytes(filePath, templateBytes);
 
             using (XmlReader xmlReader = XmlReader.Create(filePath, settings))

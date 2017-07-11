@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		global.json = global.json
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempReports", "TempReports\TempReports\TempReports.csproj", "{94C307EC-B93C-44FB-BFFF-6194F6EE1A57}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{E32FBB65-0280-47AB-8B3F-AE1A2BCCA64C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E32FBB65-0280-47AB-8B3F-AE1A2BCCA64C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E32FBB65-0280-47AB-8B3F-AE1A2BCCA64C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94C307EC-B93C-44FB-BFFF-6194F6EE1A57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94C307EC-B93C-44FB-BFFF-6194F6EE1A57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94C307EC-B93C-44FB-BFFF-6194F6EE1A57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94C307EC-B93C-44FB-BFFF-6194F6EE1A57}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

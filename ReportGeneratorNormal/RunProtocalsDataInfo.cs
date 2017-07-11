@@ -4,17 +4,19 @@ using System.Linq;
 using System.Threading.Tasks;
 using ReportGenerator;
 
-namespace ReportingService.WebApi.Controllers
+namespace ReportGenerator
 {
     public class RunProtocalsDataInfo
     {
 
         public RunProtocalsDataInfo()
-            {
-            RunProtocalsData = new List<RunProtocalsData>();
-            }
+        {
+            RunProtocals = new List<RunProtocalsDTO>();
+        }
         public string Template { get; set; }
-        public List<RunProtocalsData> RunProtocalsData { get; set; }
+        public string RunNumber { get; set; }
+        public string WorklistName { get; set; }
+        public List<RunProtocalsDTO> RunProtocals { get; set; }
     }
 
 
