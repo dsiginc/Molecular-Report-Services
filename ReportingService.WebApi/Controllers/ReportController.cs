@@ -44,5 +44,12 @@ namespace ReportingService.WebApi.Controllers
             return await report.GenerateRunProtocolsReport(runProtocolsDataInfo);
 
         }
+        [HttpPost("CreateWorksheetReport")]
+        public async Task<string> CreateWorksheetReport([FromBody]WorksheetReportInfo dataSource)
+        {
+            ReportCreator report = new ReportCreator();
+            return await report.CreateWorksheetReport(dataSource);
+
+        }
     }
 }

@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ReagentDetailsDTO.cs" />
     <Compile Include="RunProtocolsData.cs" />
     <Compile Include="CaseData.cs" />
     <Compile Include="CaseQualitativeData.cs" />
@@ -60,7 +61,9 @@
     <Compile Include="QuantitativeResults.cs" />
     <Compile Include="RunProtocolsDataInfo.cs" />
     <Compile Include="SpecimenInfoData.cs" />
+    <Compile Include="SpecimenRunInfoDTO.cs" />
     <Compile Include="VariantsData.cs" />
+    <Compile Include="WorksheetReportInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
