@@ -211,7 +211,7 @@ namespace ReportGenerator
             RenderingResult result = reportProcessor.RenderReport("PDF", instanceReportSource, null);
 
             var reportLocation = ConfigurationManager.AppSettings["ReportTempLocation"];
-            string reportName = reportLocation + "//" + dataSource.RunId + "_RunProtocols" + DateTime.Now.ToString("yyyyMMdd") + ".pdf";
+            string reportName = reportLocation + "//" + dataSource.RunId + "_WorksheetInfo" + DateTime.Now.ToString("yyyyMMdd") + ".pdf";
             using (FileStream fs = new FileStream(reportName, FileMode.Create))
             {
                 fs.Write(result.DocumentBytes, 0, result.DocumentBytes.Length);
