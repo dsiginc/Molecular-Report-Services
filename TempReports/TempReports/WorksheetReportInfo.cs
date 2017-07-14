@@ -9,6 +9,7 @@ namespace Molecular.DataAccess.ReportsService
 
         }
         public string Template { get; set; }
+        public string WorklistName { get; set; }
         public long RunId { get; set; }
         public bool TestWorksheetAccepted { get; set; }
         public int NumberOfSpecimenReplicates { get; set; }
