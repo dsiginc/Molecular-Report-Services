@@ -13,7 +13,6 @@ namespace ReportGenerator
         {
             RunProtocols = new List<RunProtocolsDTO>();
         }
-        public string Template { get; set; }
         public long RunId { get; set; }
         public string WorklistName { get; set; }
         public List<RunProtocolsDTO> RunProtocols { get; set; }

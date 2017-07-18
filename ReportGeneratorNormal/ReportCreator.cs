@@ -153,7 +153,7 @@ namespace ReportGenerator
         public async Task<string> GenerateRunProtocolsReport(RunProtocolsDataInfo dataSource)
         {
 
-            string filePath = System.Configuration.ConfigurationManager.AppSettings["ReportTemplateLocation"].ToString() + "\\" + dataSource.Template;
+            string filePath = System.Configuration.ConfigurationManager.AppSettings["ReportTemplateLocation"].ToString() + "\\RunProtocol.trdx";
            
             XmlReaderSettings settings = new XmlReaderSettings();
             settings.IgnoreWhitespace = true;
