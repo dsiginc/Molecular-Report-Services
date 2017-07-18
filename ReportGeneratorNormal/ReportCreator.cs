@@ -189,7 +189,7 @@ namespace ReportGenerator
         public async Task<string> CreateWorksheetReport(WorksheetReportInfo dataSource)
         {
 
-            string filePath = System.Configuration.ConfigurationManager.AppSettings["ReportTemplateLocation"].ToString() + "\\" + dataSource.Template;
+            string filePath = System.Configuration.ConfigurationManager.AppSettings["ReportTemplateLocation"].ToString() + "\\WorksheetReport.trdx";
 
             XmlReaderSettings settings = new XmlReaderSettings();
             settings.IgnoreWhitespace = true;
