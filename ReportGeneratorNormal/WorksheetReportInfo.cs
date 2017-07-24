@@ -8,6 +8,8 @@ namespace ReportGenerator
         {
 
         }
+        public string FolderPath { get; set; }
+        public string ServerUrl { get; set; }
         public string WorklistName { get; set; }
         public long RunId { get; set; }
         public bool TestWorksheetAccepted { get; set; }

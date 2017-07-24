@@ -18,6 +18,8 @@ namespace ReportGenerator
             QuantitativeData = new List<QuantitativeResults>();
 
         }
+        public string FolderPath { get; set; }
+        public string ServerUrl { get; set; }
         public CaseData CaseInfo { get; set; }
 
         public CaseTestData CaseTestInfo { get; set; }

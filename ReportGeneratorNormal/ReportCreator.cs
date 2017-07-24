@@ -14,14 +14,14 @@ namespace ReportGenerator
     public class ReportCreator
     {
 
-        public  async Task<string> GenerateReport(string template, CaseQualitativeData dataSource)
+        public async Task<string> GenerateReport(string template, CaseQualitativeData dataSource)
         {
 
             //Reference:http://www.telerik.com/forums/programmatically-use-of-trdp-report
             //sample reports:C:\Program Files (x86)\Telerik\Reporting R1 2017\Report Designer\Examples
-           
 
-            string filePath= System.Configuration.ConfigurationManager.AppSettings["ReportTempLocation"].ToString()+"\\"+ Guid.NewGuid().ToString()+"_"+ DateTime.Now.ToString("yyyyMMdd_HH_mm_ss")+".trdx";
+
+            string filePath = System.Configuration.ConfigurationManager.AppSettings["ReportTempLocation"].ToString() + "\\" + Guid.NewGuid().ToString() + "_" + DateTime.Now.ToString("yyyyMMdd_HH_mm_ss") + ".trdx";
 
             XmlReaderSettings settings = new XmlReaderSettings();
             settings.IgnoreWhitespace = true;
@@ -31,7 +31,7 @@ namespace ReportGenerator
             byte[] templateBytes = Convert.FromBase64String(template);
             File.WriteAllBytes(filePath, templateBytes);
 
-            using (XmlReader xmlReader = XmlReader.Create(filePath , settings))
+            using (XmlReader xmlReader = XmlReader.Create(filePath, settings))
             {
                 ReportXmlSerializer xmlSerializer = new ReportXmlSerializer();
                 report = (Telerik.Reporting.Report)xmlSerializer.Deserialize(xmlReader);
@@ -43,7 +43,7 @@ namespace ReportGenerator
             //}
 
             report.DataSource = dataSource;
-           
+
 
             ReportProcessor reportProcessor = new ReportProcessor();
             InstanceReportSource instanceReportSource = new InstanceReportSource();
@@ -52,22 +52,19 @@ namespace ReportGenerator
 
             byte[] bytes = result.DocumentBytes;
             string response = Convert.ToBase64String(bytes);
-            //var reportLocation = ConfigurationManager.AppSettings["ReportTempLocation"];
-            //string reportName = reportLocation + "\\"+  dataSource.CaseInfo.CaseNo + "_" + dataSource.CaseInfo.PatientName.Replace(" ", "") + DateTime.Now.ToString() + ".pdf";
-            //using (FileStream fs = new FileStream(reportName, FileMode.Create))
-            //{
-            //    fs.Write(result.DocumentBytes, 0, result.DocumentBytes.Length);
-            //}
+            var reportLocation = ConfigurationManager.AppSettings["ReportTempLocation"];
+            string reportName = "Qualitative_"+dataSource.CaseInfo.CaseNo + "_" + dataSource.CaseInfo.PatientName.Replace(" ", "") + DateTime.Now.ToString() + ".pdf";
+            string reportDestination = Path.Combine(dataSource.FolderPath, reportName);
 
-            //Converting it to byte array
-           // byte[] bytes = System.IO.File.ReadAllBytes(filePath + ".pdf");
-
-
-            if (File.Exists(filePath))
+            using (FileStream fs = new FileStream(reportDestination, FileMode.Create))
             {
-                File.Delete(filePath);
+                fs.Write(result.DocumentBytes, 0, result.DocumentBytes.Length);
             }
-            return response;
+            string reportUrl = dataSource.ServerUrl + "/" + reportName;
+            //byte[] bytes = result.DocumentBytes;
+            //string response = Convert.ToBase64String(bytes);
+
+            return reportUrl;
         }
 
         public async Task<string> GenerateQuantiativeReport(string template, CaseQuantitativeData dataSource)
@@ -101,17 +98,18 @@ namespace ReportGenerator
             string response = Convert.ToBase64String(bytes);
 
             var reportLocation = ConfigurationManager.AppSettings["ReportTempLocation"];
-            string reportName = reportLocation + "//" + dataSource.CaseInfo.CaseNo + "_" + dataSource.PatientInfo.PatientName.Replace(" ", "") + DateTime.Now.ToString("yyyyMMdd") + ".pdf";
-            using (FileStream fs = new FileStream(reportName, FileMode.Create))
+            string reportName = "Quantiative_" + dataSource.CaseInfo.CaseNo + "_" + dataSource.PatientInfo.PatientName.Replace(" ", "") + DateTime.Now.ToString("yyyyMMdd_HH_mm_ss") + ".pdf";
+            string reportDestination = Path.Combine(dataSource.FolderPath, reportName);
+
+            using (FileStream fs = new FileStream(reportDestination, FileMode.Create))
             {
                 fs.Write(result.DocumentBytes, 0, result.DocumentBytes.Length);
             }
+            string reportUrl = dataSource.ServerUrl + "/" + reportName;
+            //byte[] bytes = result.DocumentBytes;
+            //string response = Convert.ToBase64String(bytes);
 
-            if (File.Exists(filePath))
-            {
-                File.Delete(filePath);
-            }
-            return response;
+            return reportUrl;
         }
 
         public async Task<string> GenerateSequenceReport(string template, CaseSequenceData dataSource)
@@ -141,14 +139,19 @@ namespace ReportGenerator
             instanceReportSource.ReportDocument = report;
             RenderingResult result = reportProcessor.RenderReport("PDF", instanceReportSource, null);
 
-            byte[] bytes = result.DocumentBytes;
-            string response = Convert.ToBase64String(bytes);
+            var reportLocation = ConfigurationManager.AppSettings["ReportTempLocation"];
+            string reportName = "Sequence_" + dataSource.CaseInfo.CaseNo + "_" + dataSource.PatientInfo.PatientName.Replace(" ", "") + DateTime.Now.ToString("yyyyMMdd_HH_mm_ss") + ".pdf";
+            string reportDestination = Path.Combine(dataSource.FolderPath, reportName);
 
-            if (File.Exists(filePath))
+            using (FileStream fs = new FileStream(reportDestination, FileMode.Create))
             {
-                File.Delete(filePath);
+                fs.Write(result.DocumentBytes, 0, result.DocumentBytes.Length);
             }
-            return response;
+            string reportUrl = dataSource.ServerUrl + "/" + reportName;
+            //byte[] bytes = result.DocumentBytes;
+            //string response = Convert.ToBase64String(bytes);
+
+            return reportUrl;
         }
         public async Task<string> GenerateRunProtocolsReport(RunProtocolsDataInfo dataSource)
         {
@@ -175,16 +178,18 @@ namespace ReportGenerator
             RenderingResult result = reportProcessor.RenderReport("PDF", instanceReportSource, null);
 
             var reportLocation = ConfigurationManager.AppSettings["ReportTempLocation"];
-            string reportName = reportLocation + "//" + dataSource.RunId + "_RunProtocols" + DateTime.Now.ToString("yyyyMMdd") + ".pdf";
-            using (FileStream fs = new FileStream(reportName, FileMode.Create))
+            string reportName = dataSource.RunId + "_RunProtocols" + Guid.NewGuid().ToString() + "_" + DateTime.Now.ToString("yyyyMMdd_HH_mm_ss") + ".pdf";
+            string reportDestination = Path.Combine(dataSource.FolderPath, reportName);
+
+            using (FileStream fs = new FileStream(reportDestination, FileMode.Create))
             {
                 fs.Write(result.DocumentBytes, 0, result.DocumentBytes.Length);
             }
+            string reportUrl = dataSource.ServerUrl + "/" + reportName;
+            //byte[] bytes = result.DocumentBytes;
+            //string response = Convert.ToBase64String(bytes);
 
-            byte[] bytes = result.DocumentBytes;
-            string response = Convert.ToBase64String(bytes);
-
-            return response;
+            return reportUrl;
         }
         public async Task<string> CreateWorksheetReport(WorksheetReportInfo dataSource)
         {
@@ -211,16 +216,18 @@ namespace ReportGenerator
             RenderingResult result = reportProcessor.RenderReport("PDF", instanceReportSource, null);
 
             var reportLocation = ConfigurationManager.AppSettings["ReportTempLocation"];
-            string reportName = reportLocation + "//" + dataSource.RunId + "_WorksheetInfo" + DateTime.Now.ToString("yyyyMMdd") + ".pdf";
-            using (FileStream fs = new FileStream(reportName, FileMode.Create))
+            string reportName = dataSource.RunId + "_WorksheetInfo" + Guid.NewGuid().ToString() + "_" + DateTime.Now.ToString("yyyyMMdd_HH_mm_ss") + ".pdf";
+            string reportDestination = Path.Combine(dataSource.FolderPath, reportName);
+
+            using (FileStream fs = new FileStream(reportDestination, FileMode.Create))
             {
                 fs.Write(result.DocumentBytes, 0, result.DocumentBytes.Length);
             }
+            string reportUrl = dataSource.ServerUrl + "/" + reportName;
+            //byte[] bytes = result.DocumentBytes;
+            //string response = Convert.ToBase64String(bytes);
 
-            byte[] bytes = result.DocumentBytes;
-            string response = Convert.ToBase64String(bytes);
-
-            return response;
+            return reportUrl;
         }
     }
 }
