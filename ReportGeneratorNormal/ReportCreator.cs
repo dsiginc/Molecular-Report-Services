@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Molecular.DataAccess.ReportsService;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
@@ -217,6 +218,44 @@ namespace ReportGenerator
 
             var reportLocation = ConfigurationManager.AppSettings["ReportTempLocation"];
             string reportName = dataSource.RunId + "_WorksheetInfo" + Guid.NewGuid().ToString() + "_" + DateTime.Now.ToString("yyyyMMdd_HH_mm_ss") + ".pdf";
+            string reportDestination = Path.Combine(dataSource.FolderPath, reportName);
+
+            using (FileStream fs = new FileStream(reportDestination, FileMode.Create))
+            {
+                fs.Write(result.DocumentBytes, 0, result.DocumentBytes.Length);
+            }
+            string reportUrl = dataSource.ServerUrl + "/" + reportName;
+            //byte[] bytes = result.DocumentBytes;
+            //string response = Convert.ToBase64String(bytes);
+
+            return reportUrl;
+        }
+        public async Task<string> CreateLabOrderRequisitionReport(LabOrderReport dataSource)
+        {
+
+            string filePath = System.Configuration.ConfigurationManager.AppSettings["ReportTemplateLocation"].ToString() + "\\LabOrderRequisitionReport.trdx";
+
+            XmlReaderSettings settings = new XmlReaderSettings();
+            settings.IgnoreWhitespace = true;
+
+            Telerik.Reporting.Report report = null;
+
+            using (XmlReader xmlReader = XmlReader.Create(filePath, settings))
+            {
+                ReportXmlSerializer xmlSerializer = new ReportXmlSerializer();
+                report = (Telerik.Reporting.Report)xmlSerializer.Deserialize(xmlReader);
+            }
+
+            report.DataSource = dataSource;
+
+
+            ReportProcessor reportProcessor = new ReportProcessor();
+            InstanceReportSource instanceReportSource = new InstanceReportSource();
+            instanceReportSource.ReportDocument = report;
+            RenderingResult result = reportProcessor.RenderReport("PDF", instanceReportSource, null);
+
+            var reportLocation = ConfigurationManager.AppSettings["ReportTempLocation"];
+            string reportName = dataSource.Id + "_LabOrderRequisition_" + Guid.NewGuid().ToString() + "_" + DateTime.Now.ToString("yyyyMMdd_HH_mm_ss") + ".pdf";
             string reportDestination = Path.Combine(dataSource.FolderPath, reportName);
 
             using (FileStream fs = new FileStream(reportDestination, FileMode.Create))

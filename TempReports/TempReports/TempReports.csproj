@@ -49,6 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LabOrderDetail.cs" />
+    <Compile Include="LabOrderReport.cs" />
     <Compile Include="ReagentDetailsDTO.cs" />
     <Compile Include="RunProtocolsData.cs" />
     <Compile Include="CaseData.cs" />

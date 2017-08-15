@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ReportGenerator;
+using Molecular.DataAccess.ReportsService;
 
 namespace ReportingService.WebApi.Controllers
 {
@@ -49,6 +50,13 @@ namespace ReportingService.WebApi.Controllers
         {
             ReportCreator report = new ReportCreator();
             return await report.CreateWorksheetReport(dataSource);
+
+        }
+        [HttpPost("CreateLabOrderRequisitionReport")]
+        public async Task<string> CreateLabOrderRequisitionReport([FromBody]LabOrderReport reportInfo)
+        {
+            ReportCreator report = new ReportCreator();
+            return await report.CreateLabOrderRequisitionReport(reportInfo);
 
         }
     }

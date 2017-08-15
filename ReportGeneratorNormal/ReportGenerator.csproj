@@ -50,6 +50,8 @@
     <Compile Include="CaseQuantitativeData.cs" />
     <Compile Include="CaseSequenceData.cs" />
     <Compile Include="CaseTestData.cs" />
+    <Compile Include="LabOrderDetail.cs" />
+    <Compile Include="LabOrderReport.cs" />
     <Compile Include="PatientInfoData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuantitativeResults.cs" />
