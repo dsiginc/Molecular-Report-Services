@@ -52,6 +52,7 @@
     <Compile Include="CaseTestData.cs" />
     <Compile Include="LabOrderDetail.cs" />
     <Compile Include="LabOrderReport.cs" />
+    <Compile Include="LabOrdersReport.cs" />
     <Compile Include="PatientInfoData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuantitativeResults.cs" />

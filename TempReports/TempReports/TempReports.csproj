@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LabOrderDetail.cs" />
+    <Compile Include="LabOrdersReport.cs" />
     <Compile Include="LabOrderReport.cs" />
     <Compile Include="ReagentDetailsDTO.cs" />
     <Compile Include="RunProtocolsData.cs" />
