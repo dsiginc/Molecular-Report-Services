@@ -54,7 +54,7 @@ namespace ReportGenerator
             byte[] bytes = result.DocumentBytes;
             string response = Convert.ToBase64String(bytes);
             var reportLocation = ConfigurationManager.AppSettings["ReportTempLocation"];
-            string reportName = "Qualitative_"+dataSource.CaseInfo.CaseNo + "_" + dataSource.CaseInfo.PatientName.Replace(" ", "") + DateTime.Now.ToString() + ".pdf";
+            string reportName = "Qualitative_"+dataSource.CaseInfo.CaseNo + "_"  + Guid.NewGuid().ToString() + "_" + DateTime.Now.ToString("yyyyMMdd_HH_mm_ss") + ".pdf";
             string reportDestination = Path.Combine(dataSource.FolderPath, reportName);
 
             using (FileStream fs = new FileStream(reportDestination, FileMode.Create))
@@ -99,7 +99,7 @@ namespace ReportGenerator
             string response = Convert.ToBase64String(bytes);
 
             var reportLocation = ConfigurationManager.AppSettings["ReportTempLocation"];
-            string reportName = "Quantiative_" + dataSource.CaseInfo.CaseNo + "_" + dataSource.PatientInfo.PatientName.Replace(" ", "") + DateTime.Now.ToString("yyyyMMdd_HH_mm_ss") + ".pdf";
+            string reportName = "Quantiative_" + dataSource.CaseInfo.CaseNo + "_" + Guid.NewGuid().ToString() + "_" + DateTime.Now.ToString("yyyyMMdd_HH_mm_ss") + ".pdf";
             string reportDestination = Path.Combine(dataSource.FolderPath, reportName);
 
             using (FileStream fs = new FileStream(reportDestination, FileMode.Create))
@@ -141,7 +141,7 @@ namespace ReportGenerator
             RenderingResult result = reportProcessor.RenderReport("PDF", instanceReportSource, null);
 
             var reportLocation = ConfigurationManager.AppSettings["ReportTempLocation"];
-            string reportName = "Sequence_" + dataSource.CaseInfo.CaseNo + "_" + dataSource.PatientInfo.PatientName.Replace(" ", "") + DateTime.Now.ToString("yyyyMMdd_HH_mm_ss") + ".pdf";
+            string reportName = "Sequence_" + dataSource.CaseInfo.CaseNo + "_" + Guid.NewGuid().ToString() + "_" + DateTime.Now.ToString("yyyyMMdd_HH_mm_ss") + ".pdf";
             string reportDestination = Path.Combine(dataSource.FolderPath, reportName);
 
             using (FileStream fs = new FileStream(reportDestination, FileMode.Create))
