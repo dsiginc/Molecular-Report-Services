@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ReportGenerator;
 using Molecular.DataAccess.ReportsService;
+using Molecular.DataAccess.ToxicologyAccessionService;
 
 namespace ReportingService.WebApi.Controllers
 {
@@ -64,6 +65,14 @@ namespace ReportingService.WebApi.Controllers
         {
             ReportCreator report = new ReportCreator();
             return await report.CreateLabOrdersReport(reportInfo);
+
+        }
+        [HttpPost("CreateCaseReport")]
+        public async Task<string> CreateToxicologyAccessionReport([FromBody]ReportCaseData reportInfo)
+        {
+            string templateName = "ToxicologyAccessionCaseReport";
+            ReportCreator report = new ReportCreator();
+            return await report.CreateToxicologyAccessionReport(reportInfo, templateName);
 
         }
     }
