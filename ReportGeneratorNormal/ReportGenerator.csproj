@@ -54,6 +54,7 @@
     <Compile Include="LabOrderReport.cs" />
     <Compile Include="LabOrdersReport.cs" />
     <Compile Include="PatientInfoData.cs" />
+    <Compile Include="PrescribedDrug.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuantitativeResults.cs" />
     <Compile Include="ReagentDetailsDTO.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="ReportCaseSpecimens.cs" />
     <Compile Include="ReportCreator.cs" />
     <Compile Include="ReportPatient.cs" />
+    <Compile Include="ReportPhysicianInfo.cs" />
     <Compile Include="RunProtocolsDataInfo.cs" />
     <Compile Include="RunProtocolsDTO.cs" />
     <Compile Include="SpecimenInfoData.cs" />

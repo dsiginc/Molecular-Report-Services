@@ -14,10 +14,13 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public string ClinicalHistory { get; set; }
         public string CaseType { get; set; }
         public string ClaimNo { get; set; }
-        public DateTime? DateReceived { get; set; }
+        public string DateReceived { get; set; }
+        public string TimeReceived { get; set; }
         public string FinalInterpretation { get; set; }
-        public DateTime? FinalizedDate { get; set; }
-        public DateTime? InjuryDate { get; set; }
+        public string FinalizedDate { get; set; }
+        public string FinalizedTime { get; set; }
+        public string InjuryDate { get; set; }
+        public string InjuryTime { get; set; }
         public string InsuranceType { get; set; }
         public bool IsAmended { get; set; }
         public bool IsCorrection { get; set; }
@@ -29,11 +32,13 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public bool? IsPrinted { get; set; }
         public string Volume { get; set; }
         public string CancelledBy { get; set; }
-        public DateTime? CancelledDate { get; set; }
+        public string CancelledDate { get; set; }
+        public string CancelledTime { get; set; }
         public bool? IsAutoSignout { get; set; }
         public string PhysicianLocation { get; set; }
         public string PatientName { get; set; }
         public string PathologistName { get; set; }
+        public long PhysicianId { get; set; }
         public string PhysicianName { get; set; }
         public string SecondaryPhysician { get; set; }
         public string ProfileName { get; set; }

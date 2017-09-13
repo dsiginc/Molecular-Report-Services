@@ -10,7 +10,7 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public long Id { get; set; }
         public long Version { get; set; }
         public int Age { get; set; }
-        public DateTime DateOfBirth { get; set; }
+        public string DateOfBirth { get; set; }
         public string Gender { get; set; }
         public long LabId { get; set; }
         public long? LabclientId { get; set; }

@@ -17,5 +17,6 @@
         public string Compound { get; set; }
         public string CaseNo { get; set; }
         public long ProfileId { get; set; }
+        public string Cutoff { get; set; }
     }
 }

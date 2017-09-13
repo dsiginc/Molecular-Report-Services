@@ -52,12 +52,14 @@
     <Compile Include="LabOrderDetail.cs" />
     <Compile Include="LabOrdersReport.cs" />
     <Compile Include="LabOrderReport.cs" />
+    <Compile Include="PrescribedDrug.cs" />
     <Compile Include="ReagentDetailsDTO.cs" />
     <Compile Include="ReportCaseData.cs" />
     <Compile Include="ReportCaseOrder.cs" />
     <Compile Include="ReportCaseResult.cs" />
     <Compile Include="ReportCaseSpecimens.cs" />
     <Compile Include="ReportPatient.cs" />
+    <Compile Include="ReportPhysicianInfo.cs" />
     <Compile Include="RunProtocolsData.cs" />
     <Compile Include="CaseData.cs" />
     <Compile Include="CaseQualitativeData.cs" />
