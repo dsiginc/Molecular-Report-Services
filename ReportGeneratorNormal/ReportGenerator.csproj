@@ -69,6 +69,8 @@
     <Compile Include="RunProtocolsDTO.cs" />
     <Compile Include="SpecimenInfoData.cs" />
     <Compile Include="SpecimenRunInfoDTO.cs" />
+    <Compile Include="ToxLabOrderDetail.cs" />
+    <Compile Include="ToxLabOrderReportData.cs" />
     <Compile Include="VariantsData.cs" />
     <Compile Include="WorksheetReportInfo.cs" />
   </ItemGroup>
