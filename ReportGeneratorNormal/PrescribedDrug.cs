@@ -11,5 +11,7 @@
 
         public string Result { get; set; }
 
+        public string Class { get; set; }
+
     }
 }
