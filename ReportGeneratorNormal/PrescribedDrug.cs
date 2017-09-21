@@ -7,5 +7,9 @@
         public string Comments { get; set; }
         public string Concetration { get; set; }
 
+        public string DetectionWindow { get; set; }
+
+        public string Result { get; set; }
+
     }
 }
