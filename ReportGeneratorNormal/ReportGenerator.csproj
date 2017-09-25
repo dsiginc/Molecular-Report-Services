@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CaseData.cs" />
+    <Compile Include="ExtractionData.cs" />
     <Compile Include="CaseQualitativeData.cs" />
     <Compile Include="CaseQuantitativeData.cs" />
     <Compile Include="CaseSequenceData.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="ReportCaseResult.cs" />
     <Compile Include="ReportCaseSpecimens.cs" />
     <Compile Include="ReportCreator.cs" />
+    <Compile Include="ReportInfo.cs" />
     <Compile Include="ReportPatient.cs" />
     <Compile Include="ReportPhysicianInfo.cs" />
     <Compile Include="RunProtocolsDataInfo.cs" />
