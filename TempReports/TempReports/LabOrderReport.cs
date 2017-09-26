@@ -10,6 +10,9 @@ namespace Molecular.DataAccess.ReportsService
         public string ClinicalIcdCodes { get; set; }
         public string ClinicalHistory { get; set; }
         public List<LabOrderDetail> LabOrderDetails { get; set; }
+        public ReportServicePhysicianInfo ReportPhysicianInfo { get; set; }
+        public ReportServicePatient ReportPatient { get; set; }
+        public List<ReportSpecimenPanel> ReportSpecimenPanels { get; set; }
 
 
         public string Patient { get; set; }

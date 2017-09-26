@@ -61,6 +61,9 @@
     <Compile Include="ReportCaseSpecimens.cs" />
     <Compile Include="ReportPatient.cs" />
     <Compile Include="ReportPhysicianInfo.cs" />
+    <Compile Include="ReportServicePatient.cs" />
+    <Compile Include="ReportServicePhysicianInfo.cs" />
+    <Compile Include="ReportSpecimenPanel.cs" />
     <Compile Include="RunProtocolsData.cs" />
     <Compile Include="CaseData.cs" />
     <Compile Include="CaseQualitativeData.cs" />
