@@ -28,5 +28,10 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public string StatusName { get; set; }
         public string MedicalRecordNumber { get; set; }
         public string PrescribedDrugs { get; set; }
+        public string LabName { get; set; }
+        public string LabAddress { get; set; }
+        public string LabCountry { get; set; }
+        public string LabState { get; set; }
+        public string LabZip { get; set; }
     }
 }
