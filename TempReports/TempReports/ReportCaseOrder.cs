@@ -15,6 +15,8 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public string CaseType { get; set; }
         public string ClaimNo { get; set; }
         public string DateReceived { get; set; }
+
+        public string DateCollected { get; set; }
         public string TimeReceived { get; set; }
         public string FinalInterpretation { get; set; }
         public string FinalizedDate { get; set; }
