@@ -7,7 +7,7 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
     {
         public ReportCaseSpecimens()
         {
-            CaseResults = new List<ReportCaseResult>();
+            CaseResultList = new List<ReportCaseResultList>();
         }
         public long Id { get; set; }
         public long CaseOrderId { get; set; }
@@ -18,6 +18,14 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public string SpecimenTypeName { get; set; }
         public bool IsEdited { get; set; }
         public DateTime? DateCollected { get; set; }
+        public List<ReportCaseResultList> CaseResultList { get; set; }
+    }
+    public class ReportCaseResultList
+    {
+        public ReportCaseResultList()
+        {
+            CaseResults = new List<ReportCaseResult>();
+        }
         public List<ReportCaseResult> CaseResults { get; set; }
     }
 }
