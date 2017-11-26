@@ -71,6 +71,9 @@ namespace ReportingService.WebApi.Controllers
         public async Task<string> CreateToxicologyAccessionReport([FromBody]ReportCaseData reportInfo)
         {
             string templateName = "ToxicologyAccessionCaseReport";
+            if (reportInfo != null && !string.IsNullOrEmpty(reportInfo.TemplateName))
+                templateName = templateName + "_" + reportInfo.TemplateName;
+
             ReportCreator report = new ReportCreator();
             return await report.CreateToxicologyAccessionReport(reportInfo, templateName);
 

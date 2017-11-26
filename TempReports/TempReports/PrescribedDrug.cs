@@ -13,5 +13,7 @@
 
         public string Class { get; set; }
 
+        public bool ShowColor { get; set; }
+
     }
 }

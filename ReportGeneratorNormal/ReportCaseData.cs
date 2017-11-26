@@ -11,6 +11,7 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
             NonPrescribedDrugs = new List<PrescribedDrug>();
             PrescribedDrugsNegative = new List<PrescribedDrug>();
             ValidityTestResults = new List<PrescribedDrug>();
+            ReportSummary = new List<PrescribedDrug>();
         }
         public string FolderPath { get; set; }
         public string ServerUrl { get; set; }
@@ -23,8 +24,12 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public List<ReportCaseSpecimens> ReportCaseSpecimens { get; set; }
         public List<PrescribedDrug> PrescribedDrugs { get; set; }
         public List<PrescribedDrug> NonPrescribedDrugs { get; set; }
+
+        public List<PrescribedDrug> ReportSummary { get; set; }
         public ReportPatient ReportPatient { get; set; }
 
         public List<PrescribedDrug> PrescribedDrugsNegative { get; set; }
+
+        public string TemplateName { get; set; }
     }
 }
