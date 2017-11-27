@@ -17,6 +17,7 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public string ServerUrl { get; set; }
         public string BillingLabInfo { get; set; }
         public string ProcessingLabInfo { get; set; }
+        public string ApprovedBy { get; set; }
         public List<PrescribedDrug> ValidityTestResults { get; set; }
         public string PrescribedMedications { get; set; }
         public ReportCaseOrder ReportCaseOrder { get; set; }
