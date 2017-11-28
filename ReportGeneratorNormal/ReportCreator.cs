@@ -330,19 +330,19 @@ namespace ReportGenerator
             instanceReportSource.ReportDocument = report;
             RenderingResult result = reportProcessor.RenderReport("PDF", instanceReportSource, null);
 
-            var reportLocation = ConfigurationManager.AppSettings["ReportTempLocation"];
-            string reportName = templateName+"_" + Guid.NewGuid().ToString() + "_" + DateTime.Now.ToString("yyyyMMdd_HH_mm_ss") + ".pdf";
-            string reportDestination = Path.Combine(dataSource.FolderPath, reportName);
+            //var reportLocation = ConfigurationManager.AppSettings["ReportTempLocation"];
+            //string reportName = templateName+"_" + Guid.NewGuid().ToString() + "_" + DateTime.Now.ToString("yyyyMMdd_HH_mm_ss") + ".pdf";
+            //string reportDestination = Path.Combine(reportLocation, reportName);
 
-            using (FileStream fs = new FileStream(reportDestination, FileMode.Create))
-            {
-                fs.Write(result.DocumentBytes, 0, result.DocumentBytes.Length);
-            }
-            string reportUrl = dataSource.ServerUrl + "/" + reportName;
-            //byte[] bytes = result.DocumentBytes;
+            //using (FileStream fs = new FileStream(reportDestination, FileMode.Create))
+            //{
+            //    fs.Write(result.DocumentBytes, 0, result.DocumentBytes.Length);
+            //}
+            //string reportUrl = dataSource.ServerUrl + "/" + reportName;
+            ////byte[] bytes = result.DocumentBytes;
             //string response = Convert.ToBase64String(bytes);
 
-            return reportUrl;
+            return Convert.ToBase64String(result.DocumentBytes);
         }
         public async Task<string> CreateToxLabOrderRequisitionReport(ToxLabOrderReportData dataSource)
         {
@@ -368,19 +368,19 @@ namespace ReportGenerator
             instanceReportSource.ReportDocument = report;
             RenderingResult result = reportProcessor.RenderReport("PDF", instanceReportSource, null);
 
-            var reportLocation = ConfigurationManager.AppSettings["ReportTempLocation"];
-            string reportName = dataSource.Id + "_ToxLabOrderRequisition_" + Guid.NewGuid().ToString() + "_" + DateTime.Now.ToString("yyyyMMdd_HH_mm_ss") + ".pdf";
-            string reportDestination = Path.Combine(dataSource.FolderPath, reportName);
+            //var reportLocation = ConfigurationManager.AppSettings["ReportTempLocation"];
+            //string reportName = dataSource.Id + "_ToxLabOrderRequisition_" + Guid.NewGuid().ToString() + "_" + DateTime.Now.ToString("yyyyMMdd_HH_mm_ss") + ".pdf";
+            //string reportDestination = Path.Combine(dataSource.FolderPath, reportName);
 
-            using (FileStream fs = new FileStream(reportDestination, FileMode.Create))
-            {
-                fs.Write(result.DocumentBytes, 0, result.DocumentBytes.Length);
-            }
-            string reportUrl = dataSource.ServerUrl + "/" + reportName;
+            //using (FileStream fs = new FileStream(reportDestination, FileMode.Create))
+            //{
+            //    fs.Write(result.DocumentBytes, 0, result.DocumentBytes.Length);
+            //}
+            //string reportUrl = dataSource.ServerUrl + "/" + reportName;
             //byte[] bytes = result.DocumentBytes;
             //string response = Convert.ToBase64String(bytes);
 
-            return reportUrl;
+            return Convert.ToBase64String(result.DocumentBytes);
         }
         public async Task<string> GenerateExtractionReport(string template, ExtractionData dataSource)
         {
