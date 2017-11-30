@@ -33,5 +33,6 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public string LabCountry { get; set; }
         public string LabState { get; set; }
         public string LabZip { get; set; }
+        public string Compounds { get; set; }
     }
 }
