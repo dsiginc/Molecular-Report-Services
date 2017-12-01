@@ -34,5 +34,32 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public string LabState { get; set; }
         public string LabZip { get; set; }
         public string Compounds { get; set; }
+        public string DateOfBirth { get; set; }
+        public string Gender { get; set; }
+
+        public string PhysicianContactNumber { get; set; }
+        public string PhysicianFaxNumber { get; set; }
+        public string PhysicianCity { get; set; }
+        public string PhysicianState { get; set; }
+        public string PhysicianZip { get; set; }
+        public string SpecimenTypeName { get; set; }
+
+        public string NameOfInsured { get; set; }
+        public string RelationToPatient { get; set; }
+        public string InsuranceCompanyName { get; set; }
+        public string InsuranceId { get; set; }
+        public string InsuranceGroupName { get; set; }
+        public string InsuranceGroupNumber { get; set; }
+        public string ValidityOfPolicy { get; set; }
+        public string PolicyId { get; set; }
+
+        public string LabFaxNumber { get; set; }
+        public string PatientContactNumber { get; set; }
+        public string PatientAddress { get; set; }
+        public string PatientCity { get; set; }
+        public string PatientState { get; set; }
+        public string PatientZip { get; set; }
+        public string PatientSSN { get; set; }
+        public string ProfileName { get; set; }
     }
 }
