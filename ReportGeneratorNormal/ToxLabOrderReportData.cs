@@ -61,5 +61,6 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public string PatientZip { get; set; }
         public string PatientSSN { get; set; }
         public string ProfileName { get; set; }
+        public byte[] LabLogo { get; set; }
     }
 }
