@@ -39,6 +39,7 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
 
         public string PhysicianContactNumber { get; set; }
         public string PhysicianFaxNumber { get; set; }
+        public string PhysicianAddress { get; set; }
         public string PhysicianCity { get; set; }
         public string PhysicianState { get; set; }
         public string PhysicianZip { get; set; }
