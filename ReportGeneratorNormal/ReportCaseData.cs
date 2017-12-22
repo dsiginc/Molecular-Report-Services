@@ -32,5 +32,6 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public List<PrescribedDrug> PrescribedDrugsNegative { get; set; }
 
         public string TemplateName { get; set; }
+        public bool ShowValidityResults { get; set; }
     }
 }

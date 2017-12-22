@@ -15,5 +15,7 @@
 
         public bool ShowColor { get; set; }
 
+        public bool ShowRedColor { get; set; }
+
     }
 }

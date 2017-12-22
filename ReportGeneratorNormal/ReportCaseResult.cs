@@ -19,5 +19,6 @@
         public long ProfileId { get; set; }
         public string Cutoff { get; set; }
         public string Class { get; set; }
+        public bool ShowColor { get; set; }
     }
 }

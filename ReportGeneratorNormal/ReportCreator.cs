@@ -308,6 +308,7 @@ namespace ReportGenerator
         }
         public async Task<string> CreateToxicologyAccessionReport(ReportCaseData dataSource, string templateName)
         {
+            Console.Write(dataSource.ToString());
             //string templateName = "ToxicologyAccessionCaseReport";
             string filePath = System.Configuration.ConfigurationManager.AppSettings["ReportTemplateLocation"].ToString() + "\\"+ templateName + ".trdx";
 
@@ -346,7 +347,7 @@ namespace ReportGenerator
         }
         public async Task<string> CreateToxLabOrderRequisitionReport(ToxLabOrderReportData dataSource)
         {
-
+            
             string filePath = System.Configuration.ConfigurationManager.AppSettings["ReportTemplateLocation"].ToString() + "\\ToxLabOrderRequisitionReport.trdx";
 
             XmlReaderSettings settings = new XmlReaderSettings();
