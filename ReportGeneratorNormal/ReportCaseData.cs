@@ -12,6 +12,7 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
             PrescribedDrugsNegative = new List<PrescribedDrug>();
             ValidityTestResults = new List<PrescribedDrug>();
             ReportSummary = new List<PrescribedDrug>();
+            IsomerResults = new List<PrescribedDrug>();
         }
         public string FolderPath { get; set; }
         public string ServerUrl { get; set; }
@@ -33,5 +34,7 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
 
         public string TemplateName { get; set; }
         public bool ShowValidityResults { get; set; }
+        public List<PrescribedDrug> IsomerResults { get; set; }
+        public bool ShowIsomerResults { get; set; }
     }
 }
