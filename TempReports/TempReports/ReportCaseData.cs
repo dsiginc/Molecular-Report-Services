@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Molecular.DataAccess.ToxicologyAccessionService
 {
@@ -31,5 +32,10 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public List<PrescribedDrug> PrescribedDrugsNegative { get; set; }
 
         public string TemplateName { get; set; }
+        public bool ShowValidityResults { get; set; }
+        public bool ShowIsomerResults { get; set; }
+        public string AmendReason { get; set; }
+        public DateTime? DateAmended { get; set; }
+        public string OrginalCaseNumber { get; set; }
     }
 }
