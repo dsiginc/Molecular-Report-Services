@@ -46,6 +46,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BillingReportDataObject.cs" />
+    <Compile Include="BRInsuranceCompanyInfo.cs" />
+    <Compile Include="BRInterpretingScientist.cs" />
+    <Compile Include="BRPatientInfo.cs" />
+    <Compile Include="BRPhysicianInfo.cs" />
+    <Compile Include="BRTestsPerformed.cs" />
     <Compile Include="CaseData.cs" />
     <Compile Include="ExtractionData.cs" />
     <Compile Include="CaseQualitativeData.cs" />
