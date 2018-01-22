@@ -41,5 +41,8 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public string OrginalCaseNumber { get; set; }
         public bool IsCancelled { get; set; }
         public string CancellationReason { get; set; }
+
+        public bool IsAmended { get; set; }
+        public string AmendmentLabel { get; set; }
     }
 }

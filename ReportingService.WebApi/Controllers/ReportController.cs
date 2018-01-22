@@ -92,5 +92,13 @@ namespace ReportingService.WebApi.Controllers
             return await report.GenerateExtractionReport(reportInfo.Template, reportInfo.ExtractionData);
 
         }
+
+        [HttpPost("CreateToxBillingReport")]
+        public async Task<string> CreateToxBillingReport([FromBody]BillingReportDataObject billingInfo)
+        {
+            ReportCreator report = new ReportCreator();
+            return await report.CreateToxBillingReport(billingInfo);
+
+        }// POS
     }
 }
