@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using ReportGenerator;
 using Molecular.DataAccess.ReportsService;
 using Molecular.DataAccess.ToxicologyAccessionService;
+using Molecular.DataAccess.AccessionService.Objects;
 
 namespace ReportingService.WebApi.Controllers
 {
@@ -100,5 +101,12 @@ namespace ReportingService.WebApi.Controllers
             return await report.CreateToxBillingReport(billingInfo);
 
         }// POS
+        [HttpPost("CreateMillenniumHealthReport")]
+        public async Task<string> CreateMillenniumHealthReport([FromBody]MillenniumHealthCaseReportData reportInfo)
+        {
+            ReportCreator report = new ReportCreator();
+            return await report.CreateMillenniumHealthReport(reportInfo);
+
+        }
     }
 }
