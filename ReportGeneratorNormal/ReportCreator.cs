@@ -355,7 +355,7 @@ namespace ReportGenerator
         public async Task<string> CreateMillenniumHealthReport(MillenniumHealthCaseReportData dataSource)
         {
 
-            string filePath = System.Configuration.ConfigurationManager.AppSettings["ReportTemplateLocation"].ToString() + "\\MillenniumHealthCaseReport.trdx";
+            string filePath = System.Configuration.ConfigurationManager.AppSettings["ReportTemplateLocation"].ToString() + "\\"+ dataSource.TemplateName;
 
             XmlReaderSettings settings = new XmlReaderSettings();
             settings.IgnoreWhitespace = true;

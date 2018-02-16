@@ -8,7 +8,7 @@ namespace Molecular.DataAccess.AccessionService.Objects
         {
 
         }
-
+        public string TemplateName { get; set; }
         public string PatientName { get; set; }
         public string DOB { get; set; }
         public string Gender { get; set; }
