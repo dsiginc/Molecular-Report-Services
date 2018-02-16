@@ -21,6 +21,7 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public DateTime? DateCollected { get; set; }
         public List<ReportCaseResultList> CaseResultList { get; set; }
         public List<ReportCaseResult> CaseResultsWithNoGroup { get; set; }
+     
     }
     public class ReportCaseResultList
     {

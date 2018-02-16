@@ -20,5 +20,10 @@
         public string Cutoff { get; set; }
         public string Class { get; set; }
         public bool ShowColor { get; set; }
+
+        public string Compound1 { get; set; }
+        public string Cutoff1 { get; set; }
+        public string Compound2 { get; set; }
+        public string Cutoff2 { get; set; }
     }
 }
