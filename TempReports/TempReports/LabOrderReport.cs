@@ -30,5 +30,16 @@ namespace Molecular.DataAccess.ReportsService
         public string QuantityWithUnits { get; set; }
         public string StatusName { get; set; }
         public string MedicalRecordNumber { get; set; }
+
+        public string SpecimenID { get; set; }
+        public string AccessionID { get; set; }//caseNo
+        public string LabClientName { get; set; }
+        public string LabClientAddress { get; set; }
+        public string IcdCodes { get; set; }
+        public string CollectionDate { get; set; }
+        public string CollectionTime { get; set; }
+        public string Etiology { get; set; }
+        public string AnatomicAllocation { get; set; }
+        public string Orientation { get; set; }
     }
 }
