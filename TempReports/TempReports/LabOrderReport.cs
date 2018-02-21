@@ -2,6 +2,7 @@
 
 namespace Molecular.DataAccess.ReportsService
 {
+
     public class LabOrderReport
     {
         public long Id { get; set; }
@@ -14,7 +15,7 @@ namespace Molecular.DataAccess.ReportsService
         public ReportServicePatient ReportPatient { get; set; }
         public List<ReportSpecimenPanel> ReportSpecimenPanels { get; set; }
 
-
+        public byte[] PhysicianSignature { get; set; }
         public string Patient { get; set; }
 
         public string Physician { get; set; }
@@ -31,6 +32,7 @@ namespace Molecular.DataAccess.ReportsService
         public string StatusName { get; set; }
         public string MedicalRecordNumber { get; set; }
 
+
         public string SpecimenID { get; set; }
         public string AccessionID { get; set; }//caseNo
         public string LabClientName { get; set; }
@@ -41,5 +43,14 @@ namespace Molecular.DataAccess.ReportsService
         public string Etiology { get; set; }
         public string AnatomicAllocation { get; set; }
         public string Orientation { get; set; }
+        public string CurrentDate { get; set; }
+        public string ProviderName { get; set; }
+        public string AuthorizedUserName { get; set; }
+        public byte[] AuthorizedUserSignature { get; set; }
+
+        public List<string> TestCodes { get; set; }
+        public List<string> OrderReasons { get; set; }
+        public string OrderOtherReason { get; set; }
+
     }
 }
