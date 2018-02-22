@@ -51,6 +51,7 @@ namespace Molecular.DataAccess.ReportsService
         public List<string> TestCodes { get; set; }
         public List<string> OrderReasons { get; set; }
         public string OrderOtherReason { get; set; }
+        public string OrderDate { get; set; }
 
     }
 }

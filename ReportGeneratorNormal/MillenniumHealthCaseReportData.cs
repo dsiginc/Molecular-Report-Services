@@ -4,10 +4,6 @@ namespace Molecular.DataAccess.AccessionService.Objects
 {
     public class MillenniumHealthCaseReportData
     {
-        public MillenniumHealthCaseReportData()
-        {
-
-        }
         public string TemplateName { get; set; }
         public string PatientName { get; set; }
         public string DOB { get; set; }
@@ -25,9 +21,32 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public string DateReceived { get; set; }
         public string DateCollected { get; set; }
         public string DateSigned { get; set; }//Report Date
+        public string OtherComments { get; set; }
+        public bool ShowResults { get; set; }
         /*----CaseInfo---end--*/
+        public List<string> TestsNotDetected { get; set; }
+        public List<string> TestsDetected { get; set; }
+        public List<string> TestsUTD { get; set; }
+        public List<ResultSummery> ResistanceGeneResultSummery { get; set; }
+        public List<ResultSummery> OrganismsResultSummery { get; set; }
+        public List<ResultSummery> VirulenceGeneResultSummery { get; set; }
+        public string ResistanceGeneNote { get; set; }
+        public string OrganismsNote { get; set; }
+        public string VirulenceGeneNote { get; set; }
 
-        //Results Summary -- Will find more details on how to create it
         //Test Results - Will hard the tables on the report with the test names but need to find a way to set on the report.
+    }
+    public class ResultSummery
+    {
+        public string GeneName { get; set; }
+        public string Category { get; set; }
+        public string Spectrum { get; set; }
+        public string Notes { get; set; }
+        public string Summary { get; set; }
+        public string NotesSuperscript { get; set; }
+        public string SummarySuperscript { get; set; }
+        public string SpectrumSuperscript { get; set; }
+        public string GeneSuperscript { get; set; }
+        public string CategorySuperscript { get; set; }
     }
 }
