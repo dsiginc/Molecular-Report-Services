@@ -5,7 +5,10 @@ namespace ReportGeneratorNormal
     {
         public static byte[] GetDictionaryValue(Dictionary<string, byte[]> ResultList, string keyValue)
         {
-            return ResultList[keyValue];
+            byte[] item;
+            if (!ResultList.TryGetValue(keyValue, out item))
+                return null;
+            return item;
         }
         public static string GetYourName(string name)
         {
