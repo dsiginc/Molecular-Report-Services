@@ -84,6 +84,7 @@
     <Compile Include="SpecimenRunInfoDTO.cs" />
     <Compile Include="ToxLabOrderDetail.cs" />
     <Compile Include="ToxLabOrderReportData.cs" />
+    <Compile Include="Utility.cs" />
     <Compile Include="VariantsData.cs" />
     <Compile Include="WorksheetReportInfo.cs" />
   </ItemGroup>

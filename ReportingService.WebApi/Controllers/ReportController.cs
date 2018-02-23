@@ -7,6 +7,7 @@ using ReportGenerator;
 using Molecular.DataAccess.ReportsService;
 using Molecular.DataAccess.ToxicologyAccessionService;
 using Molecular.DataAccess.AccessionService.Objects;
+using System.ComponentModel;
 
 namespace ReportingService.WebApi.Controllers
 {
@@ -102,10 +103,17 @@ namespace ReportingService.WebApi.Controllers
 
         }// POS
         [HttpPost("CreateMillenniumHealthReport")]
-        public async Task<string> CreateMillenniumHealthReport([FromBody]MillenniumHealthCaseReportData reportInfo)
+        public async Task<string> CreateMillenniumHealthReport([FromBody]string json)
         {
-            ReportCreator report = new ReportCreator();
-            return await report.CreateMillenniumHealthReport(reportInfo);
+            try
+            {
+                MillenniumHealthCaseReportData obj = Newtonsoft.Json.JsonConvert.DeserializeObject<MillenniumHealthCaseReportData>(json);
+                ReportCreator report = new ReportCreator();
+                return await report.CreateMillenniumHealthReport(obj);
+            }catch(Exception ex)
+            {
+                throw ex;
+            }
 
         }
     }

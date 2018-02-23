@@ -2,6 +2,7 @@
 
 namespace Molecular.DataAccess.AccessionService.Objects
 {
+
     public class MillenniumHealthCaseReportData
     {
         public string TemplateName { get; set; }
@@ -23,17 +24,16 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public string DateSigned { get; set; }//Report Date
         public string OtherComments { get; set; }
         public bool ShowResults { get; set; }
+        public string EtiologyName { get; set; }
+        public string SpecimenLocationName { get; set; }
         /*----CaseInfo---end--*/
-        public List<string> TestsNotDetected { get; set; }
-        public List<string> TestsDetected { get; set; }
-        public List<string> TestsUTD { get; set; }
+        public Dictionary<string, byte[]> ResultList { get; set; }
         public List<ResultSummery> ResistanceGeneResultSummery { get; set; }
         public List<ResultSummery> OrganismsResultSummery { get; set; }
         public List<ResultSummery> VirulenceGeneResultSummery { get; set; }
         public string ResistanceGeneNote { get; set; }
         public string OrganismsNote { get; set; }
         public string VirulenceGeneNote { get; set; }
-
         //Test Results - Will hard the tables on the report with the test names but need to find a way to set on the report.
     }
     public class ResultSummery
@@ -49,4 +49,5 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public string GeneSuperscript { get; set; }
         public string CategorySuperscript { get; set; }
     }
+    
 }
