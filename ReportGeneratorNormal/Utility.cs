@@ -10,9 +10,5 @@ namespace ReportGeneratorNormal
                 return null;
             return item;
         }
-        public static string GetYourName(string name)
-        {
-            return name;
-        }
     }
 }

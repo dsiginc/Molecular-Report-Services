@@ -34,6 +34,13 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public string ResistanceGeneNote { get; set; }
         public string OrganismsNote { get; set; }
         public string VirulenceGeneNote { get; set; }
+
+        public string OrganismsUTDText { get; set; }
+        public string OrganismsSuperscript { get; set; }
+        public string ResistanceGeneUTDTest { get; set; }
+        public string ResistanceGeneSuperscript { get; set; }
+        public string virulenceGeneUTDTest { get; set; }
+        public string VirulenceGeneSuperscript { get; set; }
         //Test Results - Will hard the tables on the report with the test names but need to find a way to set on the report.
     }
     public class ResultSummery
@@ -49,5 +56,4 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public string GeneSuperscript { get; set; }
         public string CategorySuperscript { get; set; }
     }
-    
 }

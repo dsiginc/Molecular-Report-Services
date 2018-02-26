@@ -7,9 +7,5 @@ namespace ReportGeneratorNormal
         {
             return ResultList[keyValue];
         }
-        public static string GetYourName(string name)
-        {
-            return name;
-        }
     }
 }
