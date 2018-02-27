@@ -28,6 +28,7 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public string SpecimenLocationName { get; set; }
         /*----CaseInfo---end--*/
         public Dictionary<string, byte[]> ResultList { get; set; }
+        public List<string> PositiveResults { get; set; }
         public List<ResultSummery> ResistanceGeneResultSummery { get; set; }
         public List<ResultSummery> OrganismsResultSummery { get; set; }
         public List<ResultSummery> VirulenceGeneResultSummery { get; set; }
