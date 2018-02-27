@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.IO;
+
 namespace ReportGeneratorNormal
 {
     public static class Utility
@@ -7,7 +9,9 @@ namespace ReportGeneratorNormal
         {
             byte[] item;
             if (!ResultList.TryGetValue(keyValue, out item))
-                return null;
+            {
+                item = File.ReadAllBytes(System.Configuration.ConfigurationManager.AppSettings["reportIconsFolder"].ToString() + "\\not_ordered_icon.png");
+            }
             return item;
         }
     }
