@@ -7,8 +7,10 @@ namespace Molecular.DataAccess.ReportsService
     {
         public string FromLabAddress { get; set; }
         public string ToClientAddress { get; set; }
-        public decimal TotalAmount { get; set; }
-        public long NumberOfSpecimens { get; set; }
-        public decimal PricePerSpecimen { get; set; }
+        public string TotalAmount { get; set; }
+        public string NumberOfSpecimens { get; set; }
+        public string PricePerSpecimen { get; set; }
+        public string StartDate { get; set; }
+        public string EndDate { get; set; }
     }
 }

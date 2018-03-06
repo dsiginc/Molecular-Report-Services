@@ -379,10 +379,9 @@ namespace ReportGenerator
             return Convert.ToBase64String(result.DocumentBytes);
         }
 
-        public async Task<string> CreateReport(string reportTemplateName, BillingReportDataObject dataSource)
+        public async Task<string> CreatInvoiceReport(InvoiceReportData dataSource)
         {
-
-            string filePath = System.Configuration.ConfigurationManager.AppSettings["ReportTemplateLocation"].ToString() + "\\"+ reportTemplateName;
+            string filePath = System.Configuration.ConfigurationManager.AppSettings["ReportTemplateLocation"].ToString() + "\\InvoiceTemplate.trdx";
 
             XmlReaderSettings settings = new XmlReaderSettings();
             settings.IgnoreWhitespace = true;

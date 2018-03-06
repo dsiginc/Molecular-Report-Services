@@ -117,10 +117,10 @@ namespace ReportingService.WebApi.Controllers
 
         }
         [HttpPost("CreateInvoiceReport")]
-        public async Task<string> CreateInvoiceReport([FromBody]BillingReportDataObject billingInfo)
+        public async Task<string> CreateInvoiceReport([FromBody]InvoiceReportData data)
         {
             ReportCreator report = new ReportCreator();
-            return await report.CreateReport("InvoiceTemplate.trdx", billingInfo);
+            return await report.CreatInvoiceReport(data);
 
         }
     }
