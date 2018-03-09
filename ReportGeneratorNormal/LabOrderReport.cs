@@ -52,6 +52,7 @@ namespace Molecular.DataAccess.ReportsService
         public List<string> OrderReasons { get; set; }
         public string OrderOtherReason { get; set; }
         public string OrderDate { get; set; }
+        public string LabClientAccountId { get; set; }
 
     }
 }
