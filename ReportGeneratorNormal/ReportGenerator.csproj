@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="InvoiceReportData.cs" />
+    <Compile Include="InsuranceDetail.cs" />
     <Compile Include="MillenniumHealthCaseReportData.cs" />
     <Compile Include="BillingReportDataObject.cs" />
     <Compile Include="BRInsuranceCompanyInfo.cs" />
