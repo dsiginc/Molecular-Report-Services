@@ -42,6 +42,11 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public string ResistanceGeneSuperscript { get; set; }
         public string virulenceGeneUTDTest { get; set; }
         public string VirulenceGeneSuperscript { get; set; }
+
+        public bool LegendNotDetected { get; set; }
+        public bool LegendDetected { get; set; }
+        public bool LegendNotOrdered { get; set; }
+        public bool LegendUTD { get; set; }
         //Test Results - Will hard the tables on the report with the test names but need to find a way to set on the report.
     }
     public class ResultSummery
