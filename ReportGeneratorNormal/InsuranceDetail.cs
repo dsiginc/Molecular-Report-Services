@@ -33,5 +33,15 @@ namespace Molecular.DataAccess.ReportsService
         public string EmployerPhone { get; set; }
         public string GroupNumber { get; set; }
         public string PriorAuthorization { get; set; }
+
+        public string LabClientName { get; set; }
+        public string LabClientAccountId { get; set; }
+        public string LabClientAddress { get; set; }
+        public string PatientLastName { get; set; }
+        public string PatientFirstName { get; set; }
+        public string PatientMiddleName { get; set; }
+        public string PatientGender { get; set; }
+        public string PatientSSN { get; set; }
+        public string PatientDOB { get; set; }
     }
 }

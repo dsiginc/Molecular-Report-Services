@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InsuranceDetail.cs" />
     <Compile Include="Utility.cs" />
     <Compile Include="BillingReportDataObject.cs" />
     <Compile Include="BRInsuranceCompanyInfo.cs" />
