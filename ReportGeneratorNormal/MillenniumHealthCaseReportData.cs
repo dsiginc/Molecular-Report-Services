@@ -47,6 +47,7 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public bool LegendDetected { get; set; }
         public bool LegendNotOrdered { get; set; }
         public bool LegendUTD { get; set; }
+        public string CaseComments { get; set; }
         //Test Results - Will hard the tables on the report with the test names but need to find a way to set on the report.
     }
     public class ResultSummery
