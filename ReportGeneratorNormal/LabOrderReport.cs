@@ -54,6 +54,6 @@ namespace Molecular.DataAccess.ReportsService
         public string OrderDate { get; set; }
         public string LabClientAccountId { get; set; }
         public List<InsuranceDetail> InsuranceDetails { get; set; }
-
+        public string BillingTypeName { get; set; }
     }
 }
