@@ -24,5 +24,6 @@
         public string Title { get; set; }
         public string Npi { get; set; }
         public string StateName { get; set; }
+        public string UserName { get; set; }
     }
 }
