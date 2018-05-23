@@ -53,6 +53,7 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public bool IsAmended { get; set; }
         public bool IsCorrected { get; set; }
         public string AmendedReason { get; set; }
+        public string WoundOrientation { get; set; }
         //Test Results - Will hard the tables on the report with the test names but need to find a way to set on the report.
     }
     public class ResultSummery
