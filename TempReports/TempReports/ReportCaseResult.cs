@@ -25,5 +25,6 @@
         public string Cutoff1 { get; set; }
         public string Compound2 { get; set; }
         public string Cutoff2 { get; set; }
+        public string DetectionWindow { get; set; }
     }
 }

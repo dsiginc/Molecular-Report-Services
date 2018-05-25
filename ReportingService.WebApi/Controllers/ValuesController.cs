@@ -7,6 +7,7 @@ using ReportGenerator;
 
 namespace ReportingService.WebApi.Controllers
 {
+    [ApiExplorerSettings(IgnoreApi = true)]
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
