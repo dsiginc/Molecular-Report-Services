@@ -45,5 +45,6 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public bool IsAmended { get; set; }
         public string AmendmentLabel { get; set; }
         public string LabName { get; set; }
+        public string SpecimenType { get; set; }
     }
 }
