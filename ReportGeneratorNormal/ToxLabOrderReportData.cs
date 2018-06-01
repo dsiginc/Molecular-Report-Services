@@ -8,6 +8,7 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public string FolderPath { get; set; }
         public string ServerUrl { get; set; }
         public string DateCollected { get; set; }
+        public string DateReceived { get; set; }
         public string ClinicalHistory { get; set; }
         public List<ToxLabOrderDetail> LabOrderDetails { get; set; }
 
