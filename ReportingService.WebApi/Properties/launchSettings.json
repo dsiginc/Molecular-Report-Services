@@ -19,7 +19,7 @@
     "ReportingService.WebApi": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "http://localhost:5018/api/report",
+      "launchUrl": "http://localhost:5018/swagger/ui/index.html",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
