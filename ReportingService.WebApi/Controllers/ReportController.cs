@@ -123,5 +123,11 @@ namespace ReportingService.WebApi.Controllers
             return await report.CreatInvoiceReport(data);
 
         }
+        [HttpPost("CreateChemicalTestReport")]
+        public async Task<string> CreateChemicalTestReport([FromBody]ChemicalTestReportData reportInfo)
+        {
+            ReportCreator report = new ReportCreator();
+            return await report.CreateChemicalTestReportReport(reportInfo);
+        }
     }
 }

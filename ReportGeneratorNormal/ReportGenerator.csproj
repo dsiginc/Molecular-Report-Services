@@ -46,6 +46,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChemicalTestReportData.cs" />
     <Compile Include="InvoiceReportData.cs" />
     <Compile Include="InsuranceDetail.cs" />
     <Compile Include="MillenniumHealthCaseReportData.cs" />
