@@ -55,5 +55,7 @@ namespace ReportGenerator
         public string Range { get; set; }
         public string PreviousFlag { get; set; }
         public string PreviousResult { get; set; }
+        public string PreviousResultDate { get; set; }
+        public string ResultDate { get; set; }
     }
 }
