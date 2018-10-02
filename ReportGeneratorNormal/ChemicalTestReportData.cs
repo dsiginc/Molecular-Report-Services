@@ -53,5 +53,7 @@ namespace ReportGenerator
         public string Results { get; set; }
         public string Remarks { get; set; }
         public string Range { get; set; }
+        public string PreviousFlag { get; set; }
+        public string PreviousResult { get; set; }
     }
 }
