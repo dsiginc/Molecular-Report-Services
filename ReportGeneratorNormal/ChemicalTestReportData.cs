@@ -38,6 +38,7 @@ namespace ReportGenerator
         public byte[] Logo { get; set; }
         public string Address { get; set; }
         public string CLIA { get; set; }
+        public string LabDirector { get; set; }
     }
     public class CTR_Specimen
     {
