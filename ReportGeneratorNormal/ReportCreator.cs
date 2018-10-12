@@ -249,10 +249,10 @@ namespace ReportGenerator
 
             return Convert.ToBase64String(result.DocumentBytes);
         }
-        public async Task<string> CreateToxLabOrderRequisitionReport(ToxLabOrderReportData dataSource)
+        public async Task<string> CreateToxLabOrderRequisitionReport(ToxLabOrderReportData dataSource, string templateName= "ToxLabOrderRequisitionReport.trdx")
         {
             
-            string filePath = System.Configuration.ConfigurationManager.AppSettings["ReportTemplateLocation"].ToString() + "\\ToxLabOrderRequisitionReport.trdx";
+            string filePath = System.Configuration.ConfigurationManager.AppSettings["ReportTemplateLocation"].ToString() + "\\"+templateName;
 
             XmlReaderSettings settings = new XmlReaderSettings();
             settings.IgnoreWhitespace = true;

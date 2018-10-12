@@ -86,7 +86,15 @@ namespace ReportingService.WebApi.Controllers
             ReportCreator report = new ReportCreator();
             return await report.CreateToxLabOrderRequisitionReport(reportInfo);
 
-        }// POST api/values
+        }
+        [HttpPost("CreateBloodChemistryRequisitionReport")]
+        public async Task<string> CreateBloodChemistryRequisitionReport([FromBody]ToxLabOrderReportData reportInfo)
+        {
+            ReportCreator report = new ReportCreator();
+            return await report.CreateToxLabOrderRequisitionReport(reportInfo, "BloodChemistryRequisitionReport.trdx");
+
+        }
+        // POST api/values
         [HttpPost("CreateExtractionReport")]
         public async Task<string> CreateExtractionReport([FromBody]ExtractionReportInfo reportInfo)
         {

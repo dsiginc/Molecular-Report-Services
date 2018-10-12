@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Molecular.DataAccess.ReportsService;
+using System.Collections.Generic;
 
 namespace Molecular.DataAccess.ToxicologyAccessionService
 {
@@ -68,5 +69,25 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public byte[] PhysicianSignature { get; set; }
         public byte[] PatientSignature { get; set; }
         public bool ShowMedicalNecessity { get; set; }
+
+        public string SpecimenID { get; set; }
+        public string AccessionID { get; set; }
+        public string LabDirector { get; set; }
+        public string CliaID { get; set; }
+        public string CollectionTime { get; set; }
+        public string LabClientName { get; set; }
+        public string LabClientAddress { get; set; }
+        public string PatientLastName { get; set; }
+        public string PatientFirstName { get; set; }
+        public string PatientMiddleInitial { get; set; }
+        public string PatientGender { get; set; }
+        public string PatientDateOfBirth { get; set; }
+        public string OrderDate { get; set; }
+        public string AuthorizedUserName { get; set; }
+
+        public List<string> OrderReasons { get; set; }
+        public string OrderOtherReason { get; set; }
+        public List<InsuranceDetail> InsuranceDetails { get; set; }
+        public List<string> TestCodes { get; set; }
     }
 }
