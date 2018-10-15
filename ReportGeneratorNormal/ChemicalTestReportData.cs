@@ -47,6 +47,7 @@ namespace ReportGenerator
         public string CollectionDate { get; set; }
         public string ReceivedDate { get; set; }
         public string ReportDate { get; set; }
+        public string FastingHours { get; set; }
     }
     public class CTR_Physician
     {
