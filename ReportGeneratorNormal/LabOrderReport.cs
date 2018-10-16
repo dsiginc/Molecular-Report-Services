@@ -55,5 +55,6 @@ namespace Molecular.DataAccess.ReportsService
         public string LabClientAccountId { get; set; }
         public List<InsuranceDetail> InsuranceDetails { get; set; }
         public string BillingTypeName { get; set; }
+        public byte[] LabLogo { get; set; }
     }
 }
