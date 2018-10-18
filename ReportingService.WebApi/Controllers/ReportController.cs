@@ -8,6 +8,8 @@ using Molecular.DataAccess.ReportsService;
 using Molecular.DataAccess.ToxicologyAccessionService;
 using Molecular.DataAccess.AccessionService.Objects;
 using System.ComponentModel;
+using TokenGenerator;
+
 
 namespace ReportingService.WebApi.Controllers
 {
@@ -136,6 +138,14 @@ namespace ReportingService.WebApi.Controllers
         {
             ReportCreator report = new ReportCreator();
             return await report.CreateChemicalTestReportReport(reportInfo);
+        }
+
+        [HttpPost("GetAccessToken")]
+        public async Task<string> GetAccessToken()
+        {
+            TokenCreator accessToken = new TokenCreator();
+            //ReportCreator report = new ReportCreator();
+            return await accessToken.GetAccessToken();
         }
     }
 }
