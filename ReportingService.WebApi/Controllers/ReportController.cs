@@ -136,8 +136,11 @@ namespace ReportingService.WebApi.Controllers
         [HttpPost("CreateChemicalTestReport")]
         public async Task<string> CreateChemicalTestReport([FromBody]ChemicalTestReportData reportInfo)
         {
+            string templateName = "ChemicalTestReport.trdx";
+            if (reportInfo != null && reportInfo.LabInfo!=null && !string.IsNullOrEmpty(reportInfo.LabInfo.Abbreviation))
+                templateName = "BloodChemistryReport"+ reportInfo.LabInfo.Abbreviation + ".trdx";
             ReportCreator report = new ReportCreator();
-            return await report.CreateChemicalTestReportReport(reportInfo);
+            return await report.CreateChemicalTestReportReport(reportInfo, templateName);
         }
 
         [HttpPost("GetAccessToken")]

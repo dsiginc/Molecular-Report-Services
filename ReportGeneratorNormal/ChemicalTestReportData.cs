@@ -16,6 +16,10 @@ namespace ReportGenerator
         public bool IsAmended { get; set; }
         public string CaseComments { get; set; }
         public string DateSigned { get; set; }
+        public string RequisitionNo { get; set; }
+        public string LoginDate { get; set; }
+        public string ReportStatus { get; set; }
+
         public CTR_Patient PatientInfo { get; set; }
         public CTR_Lab LabInfo { get; set; }
         public CTR_Specimen SpecimenInfo { get; set; }
@@ -32,6 +36,7 @@ namespace ReportGenerator
         public string PatientId { get; set; }
         public string AccessionId { get; set; }
         public string SSN { get; set; }
+        public string Phone { get; set; }
     }
     public class CTR_Lab
     {
@@ -39,6 +44,7 @@ namespace ReportGenerator
         public string Address { get; set; }
         public string CLIA { get; set; }
         public string LabDirector { get; set; }
+        public string Abbreviation { get; set; }
     }
     public class CTR_Specimen
     {
@@ -73,5 +79,9 @@ namespace ReportGenerator
         public string PreviousResultDate { get; set; }
         public string ResultDate { get; set; }
         public byte[] Logo { get; set; }
+        public bool ApprovedPanel { get; set; }
+        public string Valuerange { get; set; }
+        public bool IsNormal { get; set; }
+        public string Units { get; set; }
     }
 }

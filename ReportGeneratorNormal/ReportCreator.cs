@@ -406,9 +406,9 @@ namespace ReportGenerator
 
             return Convert.ToBase64String(result.DocumentBytes);
         }
-        public async Task<string> CreateChemicalTestReportReport(ChemicalTestReportData dataSource)
+        public async Task<string> CreateChemicalTestReportReport(ChemicalTestReportData dataSource, string templateName)
         {
-            string filePath = System.Configuration.ConfigurationManager.AppSettings["ReportTemplateLocation"].ToString() + "\\ChemicalTestReport.trdx";
+            string filePath = System.Configuration.ConfigurationManager.AppSettings["ReportTemplateLocation"].ToString() + "\\"+ templateName;
 
             XmlReaderSettings settings = new XmlReaderSettings();
             settings.IgnoreWhitespace = true;

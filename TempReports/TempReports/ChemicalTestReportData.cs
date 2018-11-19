@@ -7,11 +7,21 @@ namespace ReportGenerator
         public ChemicalTestReportData()
         {
             PatientInfo = new CTR_Patient();
+            LabInfo = new CTR_Lab();
             SpecimenInfo = new CTR_Specimen();
             PhysicianInfo = new CTR_Physician();
             ClinicalTestResults = new List<CTR_ClinicalTestResult>();
         }
+        public bool IsCorrected { get; set; }
+        public bool IsAmended { get; set; }
+        public string CaseComments { get; set; }
+        public string DateSigned { get; set; }
+        public string RequisitionNo { get; set; }
+        public string LoginDate { get; set; }
+        public string ReportStatus { get; set; }
+
         public CTR_Patient PatientInfo { get; set; }
+        public CTR_Lab LabInfo { get; set; }
         public CTR_Specimen SpecimenInfo { get; set; }
         public CTR_Physician PhysicianInfo { get; set; }
         public List<CTR_ClinicalTestResult> ClinicalTestResults { get; set; }
@@ -25,6 +35,16 @@ namespace ReportGenerator
         public string MRN { get; set; }
         public string PatientId { get; set; }
         public string AccessionId { get; set; }
+        public string SSN { get; set; }
+        public string Phone { get; set; }
+    }
+    public class CTR_Lab
+    {
+        public byte[] Logo { get; set; }
+        public string Address { get; set; }
+        public string CLIA { get; set; }
+        public string LabDirector { get; set; }
+        public string Abbreviation { get; set; }
     }
     public class CTR_Specimen
     {
@@ -33,6 +53,7 @@ namespace ReportGenerator
         public string CollectionDate { get; set; }
         public string ReceivedDate { get; set; }
         public string ReportDate { get; set; }
+        public string FastingHours { get; set; }
     }
     public class CTR_Physician
     {
@@ -53,5 +74,14 @@ namespace ReportGenerator
         public string Results { get; set; }
         public string Remarks { get; set; }
         public string Range { get; set; }
+        public string PreviousFlag { get; set; }
+        public string PreviousResult { get; set; }
+        public string PreviousResultDate { get; set; }
+        public string ResultDate { get; set; }
+        public byte[] Logo { get; set; }
+        public bool ApprovedPanel { get; set; }
+        public string Valuerange { get; set; }
+        public bool IsNormal { get; set; }
+        public string Units { get; set; }
     }
 }
