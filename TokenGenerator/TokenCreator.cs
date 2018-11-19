@@ -1,6 +1,7 @@
 ﻿using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using Microsoft.Rest;
 using System;
+using System.Configuration;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,11 +13,18 @@ namespace TokenGenerator
     {
         public async Task<string> GetAccessToken()
         {
-            UserPasswordCredential creds = new UserPasswordCredential("Vanaja.b@dsiginc.com", "Welcome@123");
-            AuthenticationResult authenticationResult = null;
-            var authenticationContext = new AuthenticationContext("https://login.windows.net/common/oauth2/token/");
+            string analyticUserName = System.Configuration.ConfigurationManager.AppSettings["AnalyticsUserName"].ToString();
+            string analyticPassword = System.Configuration.ConfigurationManager.AppSettings["AnalyticsPassword"].ToString();
+            string analyticClientId = System.Configuration.ConfigurationManager.AppSettings["AnalyticsClientId"].ToString();
+            string authenticationContextUrl = System.Configuration.ConfigurationManager.AppSettings["AuthenticationContextUrl"].ToString();
+            string tokenUrl = System.Configuration.ConfigurationManager.AppSettings["TokenUrl"].ToString();
 
-            authenticationResult = await authenticationContext.AcquireTokenAsync("https://analysis.windows.net/powerbi/api", "c565eea1-4938-468e-8d5f-35b74ac5e8e5", creds);// new ClientCredential(Secrets.ClientID,Secrets.ClientSecret));
+
+            UserPasswordCredential creds = new UserPasswordCredential(analyticUserName, analyticPassword);
+            AuthenticationResult authenticationResult = null;
+            var authenticationContext = new AuthenticationContext(authenticationContextUrl);
+
+            authenticationResult = await authenticationContext.AcquireTokenAsync(tokenUrl, analyticClientId, creds);// new ClientCredential(Secrets.ClientID,Secrets.ClientSecret));
             return authenticationResult.AccessToken.ToString();
 
         }
