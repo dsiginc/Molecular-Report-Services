@@ -77,6 +77,7 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public string CollectionTime { get; set; }
         public string LabClientName { get; set; }
         public string LabClientAddress { get; set; }
+        public string LabClientNPI { get; set; }
         public string PatientLastName { get; set; }
         public string PatientFirstName { get; set; }
         public string PatientMiddleInitial { get; set; }
@@ -90,5 +91,7 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public List<InsuranceDetail> InsuranceDetails { get; set; }
         public List<string> TestCodes { get; set; }
         public string Fastinghours { get; set; }
+        public string SpecimenCollecterName { get; set; }
+        public List<string> ProfileIds { get; set; }
     }
 }
