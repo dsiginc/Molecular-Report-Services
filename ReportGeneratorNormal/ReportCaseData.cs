@@ -8,6 +8,7 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public ReportCaseData()
         {
             ReportCaseSpecimens = new List<ReportCaseSpecimens>();
+            UrineDrugReportCaseSpecimens = new List<ReportCaseSpecimens>();
             PrescribedDrugs = new List<PrescribedDrug>();
             NonPrescribedDrugs = new List<PrescribedDrug>();
             PrescribedDrugsNegative = new List<PrescribedDrug>();
@@ -26,6 +27,7 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public ReportCaseOrder ReportCaseOrder { get; set; }
         public ReportPhysicianInfo ReportPhysicianInfo { get; set; }
         public List<ReportCaseSpecimens> ReportCaseSpecimens { get; set; }
+        public List<ReportCaseSpecimens> UrineDrugReportCaseSpecimens { get; set; }
         public List<PrescribedDrug> PrescribedDrugs { get; set; }
         public List<PrescribedDrug> NonPrescribedDrugs { get; set; }
 
