@@ -15,6 +15,7 @@ namespace ReportGenerator
         public bool IsCorrected { get; set; }
         public bool IsAmended { get; set; }
         public string CaseComments { get; set; }
+        public string Icd10Codes { get; set; }
         public string DateSigned { get; set; }
         public string RequisitionNo { get; set; }
         public string LoginDate { get; set; }
@@ -37,6 +38,10 @@ namespace ReportGenerator
         public string AccessionId { get; set; }
         public string SSN { get; set; }
         public string Phone { get; set; }
+        public string PatientLastName { get; set; }
+        public string PatientFirstName { get; set; }
+        public string PatientMi { get; set; }
+        public string PatientAddress { get; set; }
     }
     public class CTR_Lab
     {
@@ -51,6 +56,7 @@ namespace ReportGenerator
         public string SpecimenType { get; set; }
         public string SpecimenId { get; set; }
         public string CollectionDate { get; set; }
+        public string CollectionTime { get; set; }
         public string ReceivedDate { get; set; }
         public string ReportDate { get; set; }
         public string FastingHours { get; set; }
