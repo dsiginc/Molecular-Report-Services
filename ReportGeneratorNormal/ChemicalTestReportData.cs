@@ -20,6 +20,7 @@ namespace ReportGenerator
         public string RequisitionNo { get; set; }
         public string LoginDate { get; set; }
         public string ReportStatus { get; set; }
+        public string ClientName { get; set; }
 
         public CTR_Patient PatientInfo { get; set; }
         public CTR_Lab LabInfo { get; set; }
@@ -59,6 +60,7 @@ namespace ReportGenerator
         public string CollectionTime { get; set; }
         public string ReceivedDate { get; set; }
         public string ReportDate { get; set; }
+        public string LastFastingDate { get; set; }
         public string FastingHours { get; set; }
     }
     public class CTR_Physician
@@ -90,5 +92,6 @@ namespace ReportGenerator
         public string Valuerange { get; set; }
         public bool IsNormal { get; set; }
         public string Units { get; set; }
+        public string VerifiedBy { get; set; }
     }
 }
