@@ -30,5 +30,20 @@ namespace ReportGeneratorNormal
             }
             return additionalTestsExist;
         }
+        public static bool IsTestResultsExist(List<CTR_ClinicalTestResult> testResults)
+        {
+            bool additionalTestsExist = false;
+            if (testResults != null)
+            {
+                foreach (var item in testResults)
+                {
+                    if (item.ApprovedPanel != false)
+                    {
+                        additionalTestsExist = true; break;
+                    }
+                }
+            }
+            return additionalTestsExist;
+        }
     }
 }
