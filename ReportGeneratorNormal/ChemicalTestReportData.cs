@@ -21,6 +21,7 @@ namespace ReportGenerator
         public string LoginDate { get; set; }
         public string ReportStatus { get; set; }
         public string ClientName { get; set; }
+        public bool IsPartialReport { get; set; }
 
         public CTR_Patient PatientInfo { get; set; }
         public CTR_Lab LabInfo { get; set; }
