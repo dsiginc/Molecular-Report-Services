@@ -22,6 +22,8 @@ namespace ReportGenerator
         public string ReportStatus { get; set; }
         public string ClientName { get; set; }
         public bool IsPartialReport { get; set; }
+        public string ReferencedTests { get; set; }
+        public List<CTR_SendOut> SendOuts { get; set; }
 
         public CTR_Patient PatientInfo { get; set; }
         public CTR_Lab LabInfo { get; set; }
@@ -94,5 +96,9 @@ namespace ReportGenerator
         public bool IsNormal { get; set; }
         public string Units { get; set; }
         public string VerifiedBy { get; set; }
+    }
+    public class CTR_SendOut
+    {
+        public string LabName { get; set; }
     }
 }
