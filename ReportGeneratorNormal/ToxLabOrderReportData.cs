@@ -93,5 +93,11 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public string Fastinghours { get; set; }
         public string SpecimenCollecterName { get; set; }
         public List<string> ProfileIds { get; set; }
+        public List<BasicCustomDDO> MiscTests { get; set; }
+    }
+    public class BasicCustomDDO
+    {
+        public long Id { get; set; }
+        public string Name { get; set; }
     }
 }
