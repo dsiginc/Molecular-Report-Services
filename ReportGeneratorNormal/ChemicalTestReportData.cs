@@ -23,6 +23,7 @@ namespace ReportGenerator
         public string ClientName { get; set; }
         public bool IsPartialReport { get; set; }
         public string ReferencedTests { get; set; }
+        public int SendOutsCount { get; set; }
         public List<CTR_SendOut> SendOuts { get; set; }
 
         public CTR_Patient PatientInfo { get; set; }
