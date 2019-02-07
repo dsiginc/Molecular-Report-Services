@@ -68,6 +68,10 @@ namespace ReportGenerator
     }
     public class CTR_ClinicalTestResult
     {
+        public CTR_ClinicalTestResult()
+        {
+            ManualProfileTestResults = new List<CTR_ClinicalTestResult>();
+        }
         public string PanelName { get; set; }
         public string CompoundName { get; set; }
         public string Flags { get; set; }
@@ -83,5 +87,7 @@ namespace ReportGenerator
         public string Valuerange { get; set; }
         public bool IsNormal { get; set; }
         public string Units { get; set; }
+        public bool AttachManualResults { get; set; }
+        public List<CTR_ClinicalTestResult> ManualProfileTestResults { get; set; }
     }
 }
