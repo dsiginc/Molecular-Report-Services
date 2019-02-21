@@ -102,6 +102,7 @@ namespace ReportGenerator
         public string Units { get; set; }
         public string VerifiedBy { get; set; }
         public bool AttachManualResults { get; set; }
+        public bool ManualDifferential { get; set; }
         public List<CTR_ClinicalTestResult> ManualProfileTestResults { get; set; }
     }
     public class CTR_SendOut
