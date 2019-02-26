@@ -58,6 +58,10 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public byte[] LabLogo { get; set; }
         public string LabCLIA { get; set; }
         public string LabDirector { get; set; }
+        public List<Resistance> Resistances { get; set; }
+        public List<LucidResults> LucidResults_Left { get; set; }
+        public List<LucidResults> LucidResults_Right { get; set; }
+        public bool ResistanceSummeryExist { get; set; }
         //Test Results - Will hard the tables on the report with the test names but need to find a way to set on the report.
     }
     public class ResultSummery
@@ -73,5 +77,14 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public string GeneSuperscript { get; set; }
         public string CategorySuperscript { get; set; }
     }
-
+    public class Resistance
+    {
+        public string TestName { get; set; }
+        public string Summary { get; set; }
+    }
+    public class LucidResults
+    {
+        public string TestName { get; set; }
+        public string Result { get; set; }
+    }
 }
