@@ -51,5 +51,8 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public string LabName { get; set; }
         public string SpecimenType { get; set; }
         public string SpecimenId { get; set; }
+        public string LabMedicalDirector { get; set; }
+        public string LabClientName { get; set; }
+        public string LabClientAddress { get; set; }
     }
 }
