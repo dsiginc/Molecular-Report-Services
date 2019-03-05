@@ -31,6 +31,9 @@ namespace ReportGenerator
         public CTR_Specimen SpecimenInfo { get; set; }
         public CTR_Physician PhysicianInfo { get; set; }
         public List<CTR_ClinicalTestResult> ClinicalTestResults { get; set; }
+        public string BillingLabInfo { get; set; }
+        public string ProcessingLabInfo { get; set; }
+        public string ApprovedBy { get; set; }
     }
     public class CTR_Patient
     {
