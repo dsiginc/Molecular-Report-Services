@@ -36,6 +36,7 @@ namespace Molecular.DataAccess.ReportsService
         public string SpecimenID { get; set; }
         public string AccessionID { get; set; }//caseNo
         public string LabClientName { get; set; }
+        public string LabClientNPI { get; set; }
         public string LabClientAddress { get; set; }
         public string IcdCodes { get; set; }
         public string CollectionDate { get; set; }
@@ -49,6 +50,8 @@ namespace Molecular.DataAccess.ReportsService
         public byte[] AuthorizedUserSignature { get; set; }
 
         public List<string> TestCodes { get; set; }
+        public List<TestCodes> TestCodes_Left { get; set; }
+        public List<TestCodes> TestCodes_Right { get; set; }
         public List<string> OrderReasons { get; set; }
         public string OrderOtherReason { get; set; }
         public string OrderDate { get; set; }
@@ -59,5 +62,17 @@ namespace Molecular.DataAccess.ReportsService
         public string LabAddress { get; set; }
         public string LabCLIA { get; set; }
         public string LabDirector { get; set; }
+
+        public string InsuranceCompanyName { get; set; }
+        public string InsuranceGroupNumber { get; set; }
+        public string InsuranceGroupName { get; set; }
+        public string NameOfInsured { get; set; }
+        public string InsuredDOB { get; set; }
+
+        public string TemplateName { get; set; }
+    }
+    public class TestCodes
+    {
+        public string TestCode { get; set; }
     }
 }

@@ -161,10 +161,10 @@ namespace ReportGenerator
 
             return Convert.ToBase64String(result.DocumentBytes);
         }
-        public async Task<string> CreateLabOrderRequisitionReport(LabOrderReport dataSource)
+        public async Task<string> CreateLabOrderRequisitionReport(LabOrderReport dataSource, string templateName)
         {
 
-            string filePath = System.Configuration.ConfigurationManager.AppSettings["ReportTemplateLocation"].ToString() + "\\LabOrderRequisitionReport.trdx";
+            string filePath = System.Configuration.ConfigurationManager.AppSettings["ReportTemplateLocation"].ToString() + "\\" + templateName + ".trdx";
 
             XmlReaderSettings settings = new XmlReaderSettings();
             settings.IgnoreWhitespace = true;
