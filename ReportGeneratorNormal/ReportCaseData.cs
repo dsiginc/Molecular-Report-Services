@@ -54,5 +54,6 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public string LabMedicalDirector { get; set; }
         public string LabClientName { get; set; }
         public string LabClientAddress { get; set; }
+        public string EMRReference { get; set; }
     }
 }
