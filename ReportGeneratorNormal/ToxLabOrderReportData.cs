@@ -97,6 +97,8 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public string LabAbbreviation { get; set; }
         //Access
         public List<BasicCustomDDO>[] PrescribedDrugsList { get; set; }
+        public List<BasicCustomDDO>[] ProfileNameForAccess { get; set; }
+        public List<BasicCustomDDO>[] CompoundsList { get; set; }
     }
     public class BasicCustomDDO
     {

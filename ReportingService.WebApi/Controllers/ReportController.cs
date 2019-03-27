@@ -89,8 +89,11 @@ namespace ReportingService.WebApi.Controllers
         [HttpPost("CreateToxLabOrderRequisitionReport")]
         public async Task<string> CreateToxLabOrderRequisitionReport([FromBody]ToxLabOrderReportData reportInfo)
         {
+            string templateName = "ToxLabOrderRequisitionReport.trdx";
+            if (reportInfo != null && !string.IsNullOrEmpty(reportInfo.LabAbbreviation))
+                templateName = "ToxRequisitionReport" + reportInfo.LabAbbreviation + ".trdx";
             ReportCreator report = new ReportCreator();
-            return await report.CreateToxLabOrderRequisitionReport(reportInfo);
+            return await report.CreateToxLabOrderRequisitionReport(reportInfo, templateName);
 
         }
         [HttpPost("CreateBloodChemistryRequisitionReport")]
