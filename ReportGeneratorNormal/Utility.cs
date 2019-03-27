@@ -1,4 +1,5 @@
-﻿using ReportGenerator;
+﻿using Molecular.DataAccess.ToxicologyAccessionService;
+using ReportGenerator;
 using System.Collections.Generic;
 using System.IO;
 
@@ -44,6 +45,22 @@ namespace ReportGeneratorNormal
                 }
             }
             return additionalTestsExist;
+        }
+        public static bool IsUnexpectedResultsExist(IEnumerable<PrescribedDrug> drugs, string resultType="POS")
+        {
+            bool res = false;
+            if (drugs != null)
+            {
+                foreach(var drug in drugs)
+                {
+                    if(drug.Result== resultType)
+                    {
+                        res = true;
+                        break;
+                    }
+                }
+            }
+            return res;
         }
     }
 }
