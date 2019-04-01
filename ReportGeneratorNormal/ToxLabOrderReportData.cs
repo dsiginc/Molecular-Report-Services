@@ -90,6 +90,7 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public string OrderOtherReason { get; set; }
         public List<InsuranceDetail> InsuranceDetails { get; set; }
         public List<string> TestCodes { get; set; }
+        public List<string> EmrTestCodes { get; set; }
         public string Fastinghours { get; set; }
         public string SpecimenCollecterName { get; set; }
         public List<string> ProfileIds { get; set; }
