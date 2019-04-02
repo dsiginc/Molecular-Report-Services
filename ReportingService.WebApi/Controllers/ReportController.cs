@@ -91,7 +91,7 @@ namespace ReportingService.WebApi.Controllers
         {
             string templateName = "ToxLabOrderRequisitionReport.trdx";
             if (reportInfo != null && !string.IsNullOrEmpty(reportInfo.LabAbbreviation))
-                templateName = "ToxRequisitionReport" + reportInfo.LabAbbreviation + ".trdx";
+                templateName = "ToxRequisitionReport" + "_" + reportInfo.LabAbbreviation + reportInfo.ReportCode + ".trdx";
             ReportCreator report = new ReportCreator();
             return await report.CreateToxLabOrderRequisitionReport(reportInfo, templateName);
 
