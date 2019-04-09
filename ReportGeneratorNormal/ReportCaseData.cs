@@ -16,6 +16,7 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
             ReportSummary = new List<PrescribedDrug>();
             ReportSummaryNew = new List<PrescribedDrug>();
             IsomerResults = new List<PrescribedDrug>();
+            PreviousHistory = new PreviousHistory[7];
         }
         public string FolderPath { get; set; }
         public string ServerUrl { get; set; }
@@ -55,5 +56,18 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public string LabClientName { get; set; }
         public string LabClientAddress { get; set; }
         public string EMRReference { get; set; }
+        public List<ToxLabOrderDetail> LabOrderDetails { get; set; }
+        public byte[] LabLogo { get; set; }
+        public PreviousHistory[] PreviousHistory { get; set; }
+    }
+    public class PreviousHistory
+    {
+        public string Name { get; set; }
+        public string ValuePrev1 { get; set; }
+        public string ValuePrev2 { get; set; }
+        public string ValuePrev3 { get; set; }
+        public string ValuePrev4 { get; set; }
+        public string ValuePrev5 { get; set; }
+        public string ValuePrev6 { get; set; }
     }
 }
