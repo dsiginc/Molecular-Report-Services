@@ -62,6 +62,7 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public List<LucidResults> LucidResults_Left { get; set; }
         public List<LucidResults> LucidResults_Right { get; set; }
         public bool ResistanceSummeryExist { get; set; }
+        public string ProfilesOrdered { get; set; }
         //Test Results - Will hard the tables on the report with the test names but need to find a way to set on the report.
     }
     public class ResultSummery
