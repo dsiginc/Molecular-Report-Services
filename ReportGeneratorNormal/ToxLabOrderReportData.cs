@@ -101,6 +101,7 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public List<BasicCustomDDO>[] ProfileNameForAccess { get; set; }
         public List<BasicCustomDDO>[] CompoundsList { get; set; }
         public string ReportCode { get; set; }
+        public string LabLocation { get; set; }
     }
     public class BasicCustomDDO
     {
