@@ -160,5 +160,20 @@ namespace ReportingService.WebApi.Controllers
             //ReportCreator report = new ReportCreator();
             return await accessToken.GetAccessToken();
         }
+
+        [HttpPost("CreatePGXCaseReport")]
+        public async Task<string> CreatePGXCaseReport([FromBody]string json)
+        {
+            try
+            {
+                PGXCaseReportData obj = Newtonsoft.Json.JsonConvert.DeserializeObject<PGXCaseReportData>(json);
+                ReportCreator report = new ReportCreator();
+                return await report.CreatePGXCaseReport(obj);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
