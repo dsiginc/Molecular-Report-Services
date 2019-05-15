@@ -70,6 +70,10 @@ namespace Molecular.DataAccess.ReportsService
         public string InsuredDOB { get; set; }
 
         public string TemplateName { get; set; }
+        public string RelationToPatient { get; set; }
+        public string InsuranceId { get; set; }
+        public string ValidityOfPolicy { get; set; }
+        public string PolicyId { get; set; }
     }
     public class TestCodes
     {

@@ -55,6 +55,7 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public string InsuranceGroupNumber { get; set; }
         public string ValidityOfPolicy { get; set; }
         public string PolicyId { get; set; }
+        public string InsuredDOB { get; set; }
 
         public string LabFaxNumber { get; set; }
         public string PatientContactNumber { get; set; }
