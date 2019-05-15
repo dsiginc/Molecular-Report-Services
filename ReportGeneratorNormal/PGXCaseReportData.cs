@@ -69,8 +69,13 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public string LabCLIA { get; set; }
         public string LabDirector { get; set; }
         public string ProfilesOrdered { get; set; }
+
+        public string PrescribedMedications { get; set; }
+
         //Test Results - Will hard the tables on the report with the test names but need to find a way to set on the report.
         public List<TestDetails> TestDetails { get; set; }
+
+        public List<DrugInterpretations> DrugInterpretations { get; set; }
     }
     public class TestDetails
     {
@@ -78,6 +83,15 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public string GenoType { get; set; }
         public string PhenoType { get; set; }
         public string AllelesTested { get; set; }
+    }
+
+    public class DrugInterpretations
+    {
+        public string DrugName { get; set; }
+        public string MetabolizerType { get; set; }
+        public string DrugImpactInterpretation { get; set; }
+        public string Evidence { get; set; }
+        public string Flag { get; set; }
     }
 
     //public class ResultSummery
