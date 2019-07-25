@@ -17,7 +17,6 @@
 
         public bool ShowRedColor { get; set; }
         public string RowColor { get; set; }
-
         public string Prescription { get; set; }
         public string Flag { get; set; }
     }

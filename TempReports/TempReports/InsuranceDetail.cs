@@ -27,13 +27,6 @@ namespace Molecular.DataAccess.ReportsService
         public string InsuranceZip { get; set; }
         public string InsuranceState { get; set; }
 
-        public string Gender { get; set; }
-        public string MemberNumber { get; set; }
-        public string EmployerName { get; set; }
-        public string EmployerPhone { get; set; }
-        public string GroupNumber { get; set; }
-        public string PriorAuthorization { get; set; }
-
         public string LabClientName { get; set; }
         public string LabClientAccountId { get; set; }
         public string LabClientAddress { get; set; }

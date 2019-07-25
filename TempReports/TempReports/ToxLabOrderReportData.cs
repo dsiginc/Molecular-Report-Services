@@ -66,7 +66,7 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public byte[] LabLogo { get; set; }
         public string MedicalNecessityText { get; set; }
         public byte[] PhysicianSignature { get; set; }
-
+        public byte[] PatientSignature { get; set; }
         public bool ShowMedicalNecessity { get; set; }
     }
 }

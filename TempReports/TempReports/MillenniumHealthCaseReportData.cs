@@ -42,6 +42,17 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public string ResistanceGeneSuperscript { get; set; }
         public string virulenceGeneUTDTest { get; set; }
         public string VirulenceGeneSuperscript { get; set; }
+
+        public bool LegendNotDetected { get; set; }
+        public bool LegendDetected { get; set; }
+        public bool LegendNotOrdered { get; set; }
+        public bool LegendUTD { get; set; }
+        public string CaseComments { get; set; }
+
+        public string DateAmended { get; set; }
+        public bool IsAmended { get; set; }
+        public bool IsCorrected { get; set; }
+        public string AmendedReason { get; set; }
         public string WoundOrientation { get; set; }
         public string DetailedTestResultSuperscript { get; set; }
         //Test Results - Will hard the tables on the report with the test names but need to find a way to set on the report.
@@ -59,4 +70,5 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public string GeneSuperscript { get; set; }
         public string CategorySuperscript { get; set; }
     }
+
 }

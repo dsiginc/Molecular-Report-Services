@@ -60,6 +60,7 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public byte[] LabLogo { get; set; }
         public PreviousHistory[] PreviousHistory { get; set; }
         public int PreviousCasesCount { get; set; }
+        public string ReportStatus { get; set; }
     }
     public class PreviousHistory
     {
