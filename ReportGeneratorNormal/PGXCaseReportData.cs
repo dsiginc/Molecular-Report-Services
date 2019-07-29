@@ -14,6 +14,11 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public string Gender { get; set; }
         public string MRN { get; set; }
         public string SSN { get; set; }
+        public int Age { get; set; }
+        public string PatientAddress1 { get; set; }
+        public string PatientCity { get; set; }
+        public string PatientState { get; set; }
+        public string PatientZip { get; set; }
         /*----CaseInfo---start--*/
         public string SpecimenID { get; set; }
         public string AccessionID { get; set; }//caseNo
@@ -21,6 +26,7 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public string SpecimenType { get; set; }
         public string LabClientName { get; set; }
         public string LabClientAddress { get; set; }
+        public string LabClientCityStateZip { get; set; }
         public string AnatomicLocation { get; set; }//Specimen source
         public string DateReceived { get; set; }
         public string DateCollected { get; set; }
@@ -69,13 +75,18 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public string LabCLIA { get; set; }
         public string LabDirector { get; set; }
         public string ProfilesOrdered { get; set; }
-
+        public string LabPhone { get; set; }
+        public string LabFax { get; set; }
+        public string LabEmail { get; set; }
         public string PrescribedMedications { get; set; }
 
         //Test Results - Will hard the tables on the report with the test names but need to find a way to set on the report.
         public List<TestDetails> TestDetails { get; set; }
 
         public List<DrugInterpretations> DrugInterpretations { get; set; }
+        public List<DrugInterpretations> PrescribedDrugInterpretations { get; set; }
+        public List<DrugsUsage> DrugsUsage { get; set; }
+        public List<byte[]> FlagIcons;
     }
     public class TestDetails
     {
@@ -92,8 +103,26 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public string DrugImpactInterpretation { get; set; }
         public string Evidence { get; set; }
         public string Flag { get; set; }
+        public string GeneName { get; set; }
+        public string Implication { get; set; }
+        public string TherapeuticArea { get; set; }
+        public string DrugClass { get; set; }
+        public string PhenoTypeDescription { get; set; }
+        public string FDALabelSection { get; set; }
     }
-
+    public class DrugsUsage
+    {
+        public string DrugClass { get; set; }
+        public string DrugName { get; set; }
+        public string GeneName { get; set; }
+        public bool Typical { get; set; }
+        public bool DoseAdjustment { get; set; }
+        public bool DoseAdjustmentorAlternative { get; set; }
+        public bool AlternateDrug { get; set; }
+        public bool UncertainorQuestion { get; set; }
+        public int ImageIndex { get; set; }
+        public string TherapeuticArea { get; set; }
+    }
     //public class ResultSummery
     //{
     //    public string GeneName { get; set; }
