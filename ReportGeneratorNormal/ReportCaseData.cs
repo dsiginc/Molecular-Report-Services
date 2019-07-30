@@ -13,6 +13,7 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
             NonPrescribedDrugs = new List<PrescribedDrug>();
             PrescribedDrugsNegative = new List<PrescribedDrug>();
             ValidityTestResults = new List<PrescribedDrug>();
+            ValidityTestResultsSplit = new List<BasicCustomDDO>[4];
             ReportSummary = new List<PrescribedDrug>();
             ReportSummaryNew = new List<PrescribedDrug>();
             IsomerResults = new List<PrescribedDrug>();
@@ -25,6 +26,7 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public string ApprovedBy { get; set; }
         public string PrescribedMedications { get; set; }
         public List<PrescribedDrug> ValidityTestResults { get; set; }
+        public List<BasicCustomDDO>[] ValidityTestResultsSplit { get; set; }
         public ReportCaseOrder ReportCaseOrder { get; set; }
         public ReportPhysicianInfo ReportPhysicianInfo { get; set; }
         public List<ReportCaseSpecimens> ReportCaseSpecimens { get; set; }
