@@ -112,6 +112,15 @@ namespace Molecular.DataAccess.AccessionService.Objects
     }
     public class DrugsUsage
     {
+        public DrugsUsage()
+        {
+            Details = new List<DrugsUsageDetails>();
+        }
+        public List<DrugsUsageDetails> Details { get; set; }
+        public string TherapeuticArea { get; set; }
+    }
+    public class DrugsUsageDetails
+    {
         public string DrugClass { get; set; }
         public string DrugName { get; set; }
         public string GeneName { get; set; }
@@ -121,7 +130,6 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public bool AlternateDrug { get; set; }
         public bool UncertainorQuestion { get; set; }
         public int ImageIndex { get; set; }
-        public string TherapeuticArea { get; set; }
     }
     //public class ResultSummery
     //{
