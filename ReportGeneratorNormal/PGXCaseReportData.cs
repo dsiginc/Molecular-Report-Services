@@ -84,7 +84,7 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public List<TestDetails> TestDetails { get; set; }
 
         public List<DrugInterpretations> DrugInterpretations { get; set; }
-        public List<DrugInterpretations> PrescribedDrugInterpretations { get; set; }
+        public List<PrescribedDrugInterpretations> PrescribedDrugInterpretations { get; set; }
         public List<DrugsUsage> DrugsUsage { get; set; }
         public List<byte[]> FlagIcons;
     }
@@ -98,6 +98,30 @@ namespace Molecular.DataAccess.AccessionService.Objects
 
     public class DrugInterpretations
     {
+        public DrugInterpretations()
+        {
+            DrugInterpretationDetails = new List<DrugInterpretationDetails>();
+        }
+        public List<DrugInterpretationDetails> DrugInterpretationDetails { get; set; }
+        public string TherapeuticArea { get; set; }
+
+    }
+    public class PrescribedDrugInterpretations
+    {
+        public string DrugName { get; set; }
+        public string MetabolizerType { get; set; }
+        public string DrugImpactInterpretation { get; set; }
+        public string TherapeuticArea { get; set; }
+        public string Evidence { get; set; }
+        public string Flag { get; set; }
+        public string GeneName { get; set; }
+        public string Implication { get; set; }
+        public string DrugClass { get; set; }
+        public string PhenoTypeDescription { get; set; }
+        public string FDALabelSection { get; set; }
+    }
+    public class DrugInterpretationDetails
+    {
         public string DrugName { get; set; }
         public string MetabolizerType { get; set; }
         public string DrugImpactInterpretation { get; set; }
@@ -105,7 +129,6 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public string Flag { get; set; }
         public string GeneName { get; set; }
         public string Implication { get; set; }
-        public string TherapeuticArea { get; set; }
         public string DrugClass { get; set; }
         public string PhenoTypeDescription { get; set; }
         public string FDALabelSection { get; set; }
