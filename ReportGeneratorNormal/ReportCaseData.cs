@@ -59,6 +59,7 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public string LabClientAddress { get; set; }
         public string EMRReference { get; set; }
         public List<ToxLabOrderDetail> LabOrderDetails { get; set; }
+        public ToxLabOrderReportData LabOrderReport { get; set; }
         public byte[] LabLogo { get; set; }
         public PreviousHistory[] PreviousHistory { get; set; }
         public int PreviousCasesCount { get; set; }
