@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Molecular.DataAccess.AccessionService.Objects
 {
@@ -19,6 +15,7 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public string PatientCity { get; set; }
         public string PatientState { get; set; }
         public string PatientZip { get; set; }
+        public string PatientAccNumber { get; set; }
         /*----CaseInfo---start--*/
         public string SpecimenID { get; set; }
         public string AccessionID { get; set; }//caseNo
@@ -87,6 +84,8 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public List<PrescribedDrugInterpretations> PrescribedDrugInterpretations { get; set; }
         public List<DrugsUsage> DrugsUsage { get; set; }
         public List<byte[]> FlagIcons;
+        public List<BasicCustomDDO>[] TestDetailsSplit { get; set; }
+        public string LabName { get; set; }
     }
     public class TestDetails
     {
@@ -153,6 +152,13 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public bool AlternateDrug { get; set; }
         public bool UncertainorQuestion { get; set; }
         public int ImageIndex { get; set; }
+    }
+    public class BasicCustomDDO 
+    {
+        public long Id { get; set; }
+        public string Name { get; set; }
+        public string Compound { get; set; }
+        public string Compound1 { get; set; }
     }
     //public class ResultSummery
     //{
