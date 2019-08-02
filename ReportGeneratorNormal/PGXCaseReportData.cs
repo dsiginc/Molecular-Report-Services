@@ -121,6 +121,15 @@ namespace Molecular.DataAccess.AccessionService.Objects
     }
     public class DrugInterpretationDetails
     {
+        public DrugInterpretationDetails()
+        {
+            DrugInterpretationDetailsByDrugClass = new List<DrugInterpretationDetailsByDrugClass>();
+        }
+        public List<DrugInterpretationDetailsByDrugClass> DrugInterpretationDetailsByDrugClass { get; set; }
+        public string DrugClass { get; set; }
+    }
+    public class DrugInterpretationDetailsByDrugClass
+    {
         public string DrugName { get; set; }
         public string MetabolizerType { get; set; }
         public string DrugImpactInterpretation { get; set; }
@@ -128,7 +137,6 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public string Flag { get; set; }
         public string GeneName { get; set; }
         public string Implication { get; set; }
-        public string DrugClass { get; set; }
         public string PhenoTypeDescription { get; set; }
         public string FDALabelSection { get; set; }
     }
