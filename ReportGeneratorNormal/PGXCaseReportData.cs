@@ -139,6 +139,7 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public string Implication { get; set; }
         public string PhenoTypeDescription { get; set; }
         public string FDALabelSection { get; set; }
+        public string FDAInterpretation { get; set; }
     }
     public class DrugsUsage
     {
