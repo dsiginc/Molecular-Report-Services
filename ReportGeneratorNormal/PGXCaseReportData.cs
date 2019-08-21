@@ -140,6 +140,8 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public string PhenoTypeDescription { get; set; }
         public string FDALabelSection { get; set; }
         public string FDAInterpretation { get; set; }
+        public bool IsPrescribedMedication { get; set; }
+        public bool ShowAlert { get; set; }
     }
     public class DrugsUsage
     {
@@ -161,6 +163,8 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public bool AlternateDrug { get; set; }
         public bool UncertainorQuestion { get; set; }
         public int ImageIndex { get; set; }
+        public bool IsPrescribedMedication { get; set; }
+        public bool ShowAlert { get; set; }
     }
     public class BasicCustomDDO 
     {
