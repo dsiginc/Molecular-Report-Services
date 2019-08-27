@@ -86,6 +86,7 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public List<byte[]> FlagIcons;
         public List<BasicCustomDDO>[] TestDetailsSplit { get; set; }
         public string LabName { get; set; }
+        public List<CurrentMedicationsList> CurrentMedicationsList { get; set; }
     }
     public class TestDetails
     {
@@ -172,6 +173,14 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public string Name { get; set; }
         public string Compound { get; set; }
         public string Compound1 { get; set; }
+    }
+    public class CurrentMedicationsList
+    {
+        public string DrugName { get; set; }
+        public string Gene { get; set; }
+        public string ClinicalImplication { get; set; }
+        public string Inhibitors { get; set; }
+        public string Inducer { get; set; }
     }
     //public class ResultSummery
     //{
