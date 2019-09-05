@@ -9,7 +9,7 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         {
             CaseResultList = new List<ReportCaseResultList>();
             CaseResultsWithNoGroup = new List<ReportCaseResult>();
-          
+            ScreenCaseResult = new List<ReportCaseResultList>();
         }
         public long Id { get; set; }
         public long CaseOrderId { get; set; }
@@ -22,7 +22,8 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public DateTime? DateCollected { get; set; }
         public List<ReportCaseResultList> CaseResultList { get; set; }
         public List<ReportCaseResult> CaseResultsWithNoGroup { get; set; }
-      
+        public List<ReportCaseResultList> ScreenCaseResult { get; set; }
+
     }
     public class ReportCaseResultList
     {
