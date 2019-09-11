@@ -64,6 +64,9 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public bool ResistanceSummeryExist { get; set; }
         public string ProfilesOrdered { get; set; }
         //Test Results - Will hard the tables on the report with the test names but need to find a way to set on the report.
+
+        public bool ShowResistanceGenes { get; set; }
+        public bool ShowComments { get; set; }
     }
     public class ResultSummery
     {
