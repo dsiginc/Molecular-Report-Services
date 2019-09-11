@@ -87,6 +87,7 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public List<BasicCustomDDO>[] TestDetailsSplit { get; set; }
         public string LabName { get; set; }
         public List<CurrentMedicationsList> CurrentMedicationsList { get; set; }
+        public bool ShowCurrentMeds { get; set; }
     }
     public class TestDetails
     {
