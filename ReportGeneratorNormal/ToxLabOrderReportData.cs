@@ -111,5 +111,6 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public long Id { get; set; }
         public string Name { get; set; }
         public string Compound { get; set; }
+        public string Cutoff { get; set; }
     }
 }
