@@ -19,5 +19,8 @@
         public string RowColor { get; set; }
         public string Prescription { get; set; }
         public string Flag { get; set; }
+        public long DisplayOrder { get; set; }
+        public bool Expected { get; set; }
+        public bool Inconsistent { get; set; }
     }
 }

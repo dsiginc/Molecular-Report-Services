@@ -64,6 +64,7 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public PreviousHistory[] PreviousHistory { get; set; }
         public int PreviousCasesCount { get; set; }
         public string ReportStatus { get; set; }
+        public bool ValidityPassed { get; set; }
     }
     public class PreviousHistory
     {
