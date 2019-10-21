@@ -18,10 +18,14 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
             ReportSummaryNew = new List<PrescribedDrug>();
             IsomerResults = new List<PrescribedDrug>();
             PreviousHistory = new PreviousHistory[7];
+            PrescribedDrugsGroupBy = new List<PrescribedDrugList>();
+            PrescribedDrugsNegativeGroupBy = new List<PrescribedDrugList>();
+            PreviousHistoryChartData = new List<PreviousHistoryChartData>();
         }
         public string FolderPath { get; set; }
         public string ServerUrl { get; set; }
         public string BillingLabInfo { get; set; }
+        public string LabCLIA { get; set; }
         public string ProcessingLabInfo { get; set; }
         public string ApprovedBy { get; set; }
         public string PrescribedMedications { get; set; }
@@ -65,6 +69,9 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public int PreviousCasesCount { get; set; }
         public string ReportStatus { get; set; }
         public bool ValidityPassed { get; set; }
+        public List<PrescribedDrugList> PrescribedDrugsGroupBy { get; set; }
+        public List<PrescribedDrugList> PrescribedDrugsNegativeGroupBy { get; set; }
+        public List<PreviousHistoryChartData> PreviousHistoryChartData { get; set; }
     }
     public class PreviousHistory
     {
@@ -75,5 +82,20 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public string ValuePrev4 { get; set; }
         public string ValuePrev5 { get; set; }
         public string ValuePrev6 { get; set; }
+    }
+    public class PrescribedDrugList
+    {
+        public PrescribedDrugList()
+        {
+            PrescribedDrugDataList = new List<PrescribedDrug>();
+        }
+        public List<PrescribedDrug> PrescribedDrugDataList { get; set; }
+        public string Class { get; set; }
+    }
+    public class PreviousHistoryChartData
+    {
+        public string Name { get; set; }
+        public string DateCollected { get; set; }
+        public string Concentration { get; set; }
     }
 }

@@ -40,6 +40,7 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public string PhysicianLocation { get; set; }
         public string PatientName { get; set; }
         public string PathologistName { get; set; }
+        public string PathologistInitial { get; set; }
         public long PhysicianId { get; set; }
         public string PhysicianName { get; set; }
         public string SecondaryPhysician { get; set; }
