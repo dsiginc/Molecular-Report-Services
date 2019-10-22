@@ -28,10 +28,10 @@
         "bin/Debug/TokenGenerator.dll": {}
       },
       "runtime": {
-        "../packages/Microsoft.IdentityModel.Clients.ActiveDirectory.3.19.8/lib/net45/Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll": {},
-        "../packages/Microsoft.IdentityModel.Clients.ActiveDirectory.3.19.8/lib/net45/Microsoft.IdentityModel.Clients.ActiveDirectory.dll": {},
-        "../packages/Microsoft.Rest.ClientRuntime.1.0.2/lib/net45/Microsoft.Rest.ClientRuntime.dll": {},
-        "../packages/Newtonsoft.Json.11.0.2/lib/net45/Newtonsoft.Json.dll": {},
+        "../ReportingService.WebApi/packages/Microsoft.IdentityModel.Clients.ActiveDirectory.3.19.8/lib/net45/Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll": {},
+        "../ReportingService.WebApi/packages/Microsoft.IdentityModel.Clients.ActiveDirectory.3.19.8/lib/net45/Microsoft.IdentityModel.Clients.ActiveDirectory.dll": {},
+        "../ReportingService.WebApi/packages/Microsoft.Rest.ClientRuntime.1.0.2/lib/net45/Microsoft.Rest.ClientRuntime.dll": {},
+        "../ReportingService.WebApi/packages/Newtonsoft.Json.11.0.1/lib/net45/Newtonsoft.Json.dll": {},
         "bin/Debug/TokenGenerator.dll": {}
       },
       "contentFiles": {
