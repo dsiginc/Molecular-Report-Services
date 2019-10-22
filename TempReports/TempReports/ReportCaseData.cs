@@ -69,7 +69,7 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
     public class PreviousHistoryChartData
     {
         public string Name { get; set; }
-        public string DateCollected { get; set; }
-        public string Concentration { get; set; }
+        public DateTime DateCollected { get; set; }
+        public int Concentration { get; set; }
     }
 }
