@@ -100,5 +100,8 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public string Name { get; set; }
         public string DateCollected { get; set; }
         public string Concentration { get; set; }
+
+
+        public double Value { get; set; }
     }
 }
