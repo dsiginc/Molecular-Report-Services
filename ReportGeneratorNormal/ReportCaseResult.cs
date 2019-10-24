@@ -29,5 +29,8 @@
 
         public string Prescription { get; set; }
         public string Flag { get; set; }
+
+        public string Units { get; set; }
+        public string ApplyColor { get; set; }
     }
 }

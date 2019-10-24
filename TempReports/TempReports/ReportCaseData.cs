@@ -56,6 +56,8 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public List<PrescribedDrugList> PrescribedDrugsGroupBy { get; set; }
         public List<PrescribedDrugList> PrescribedDrugsNegativeGroupBy { get; set; }
         public List<PreviousHistoryChartData> PreviousHistoryChartData { get; set; }
+        public bool PreviousHistoryExists { get; set; }
+        public bool ScreenResultsExists { get; set; }
     }
     public class PrescribedDrugList
     {
