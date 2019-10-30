@@ -58,6 +58,10 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public List<PreviousHistoryChartData> PreviousHistoryChartData { get; set; }
         public bool PreviousHistoryExists { get; set; }
         public bool ScreenResultsExists { get; set; }
+        public bool ShowPresDrugsNegative { get; set; }
+        public bool ShowPresDrugsPositive { get; set; }
+        public bool ShowNonPresDrugsPositive { get; set; }
+        public byte[] ChartData { get; set; }
     }
     public class PrescribedDrugList
     {
@@ -73,5 +77,8 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public string Name { get; set; }
         public string DateCollected { get; set; }
         public string Concentration { get; set; }
+
+        public double Value { get; set; }
+        public DateTime DateBiopsy { get; set; }
     }
 }

@@ -11,6 +11,7 @@
         "../Lib/Telerik.Reporting.dll": {},
         "../packages/Microsoft.IdentityModel.Clients.ActiveDirectory.3.19.8/lib/net45/Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll": {},
         "../packages/Microsoft.IdentityModel.Clients.ActiveDirectory.3.19.8/lib/net45/Microsoft.IdentityModel.Clients.ActiveDirectory.dll": {},
+        "../packages/Microsoft.Office.Interop.Excel.15.0.4795.1000/lib/net20/Microsoft.Office.Interop.Excel.dll": {},
         "bin/Debug/ReportGeneratorNormal.dll": {}
       },
       "contentFiles": {

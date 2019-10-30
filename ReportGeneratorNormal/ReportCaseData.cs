@@ -21,6 +21,7 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
             PrescribedDrugsGroupBy = new List<PrescribedDrugList>();
             PrescribedDrugsNegativeGroupBy = new List<PrescribedDrugList>();
             PreviousHistoryChartData = new List<PreviousHistoryChartData>();
+            PreviousHistoryExcelChartData = new List<PreviousHistory>();
         }
         public string FolderPath { get; set; }
         public string ServerUrl { get; set; }
@@ -74,6 +75,11 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public List<PreviousHistoryChartData> PreviousHistoryChartData { get; set; }
         public bool PreviousHistoryExists { get; set; }
         public bool ScreenResultsExists { get; set; }
+        public bool ShowPresDrugsNegative { get; set; }
+        public bool ShowPresDrugsPositive { get; set; }
+        public bool ShowNonPresDrugsPositive { get; set; }
+        public byte[] ChartData { get; set; }
+        public List<PreviousHistory> PreviousHistoryExcelChartData { get; set; }
     }
     public class PreviousHistory
     {
@@ -103,5 +109,6 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
 
 
         public double Value { get; set; }
+        public DateTime DateBiopsy { get; set; }
     }
 }
