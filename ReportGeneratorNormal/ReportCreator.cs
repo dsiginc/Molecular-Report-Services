@@ -215,7 +215,9 @@ namespace ReportGenerator
         }
         public async Task<string> CreateToxicologyAccessionReport(ReportCaseData dataSource, string templateName)
         {
-            dataSource.ChartData = await this.GenerateChartImageFromXlsxFile("", "", dataSource.PreviousHistoryExcelChartData);
+            int seriesCount = dataSource.PreviousHistoryChartData.Select(x => x.Name).Distinct().Count();
+            int xAxisDataCount = dataSource.PreviousHistoryChartData.Select(x => x.DateCollected).Distinct().Count();
+            dataSource.ChartData = await this.GenerateChartImageFromXlsxFile("", "", dataSource.PreviousHistoryExcelChartData, seriesCount, xAxisDataCount);
             Console.Write(dataSource.ToString());
             //string templateName = "ToxicologyAccessionCaseReport";
             string filePath = System.Configuration.ConfigurationManager.AppSettings["ReportTemplateLocation"].ToString() + "\\"+ templateName + ".trdx";
@@ -472,77 +474,123 @@ namespace ReportGenerator
             return Convert.ToBase64String(result.DocumentBytes);
         }
 
-        public async Task<byte[]> GenerateChartImageFromXlsxFile<TListEntity>(string excelChartTemplateName, string outPutFolder, IEnumerable<TListEntity> inputItems)
+        public async Task<byte[]> GenerateChartImageFromXlsxFile<TListEntity>(string excelChartTemplateName, string outPutFolder, IEnumerable<TListEntity> inputItems, int seriesCount, int xAxisDataCount)
         {
-            try
+            if (inputItems != null && inputItems.Count() > 0)
             {
-                if (inputItems != null && inputItems.Count() > 0)
+                Excel.Application xlApp;
+                Excel.Workbook xlWorkBook;
+                Excel.Worksheet xlWorkSheet;
+
+                outPutFolder = System.Configuration.ConfigurationManager.AppSettings["ChartOutputFolder"].ToString();//"C:\\ReportsGenerated\\Chart\\OutPuts";
+                excelChartTemplateName = System.Configuration.ConfigurationManager.AppSettings["ChartTemplate"].ToString();//"C:\\ReportsGenerated\\Chart\\InPuts\\FinalTemplate_Test_good_series_xaxis_1.xlsx"; //
+
+                object misValue = System.Reflection.Missing.Value;
+                xlApp = new Excel.Application();
+                //xlWorkBook = xlApp.Workbooks.Add(misValue);
+                xlWorkBook = xlApp.Workbooks.Open(excelChartTemplateName);
+                xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+
+                try
                 {
-                    outPutFolder = "C:\\ReportsGenerated\\Chart\\OutPuts";
-                    excelChartTemplateName = "C:\\ReportsGenerated\\Chart\\InPuts\\FinalTemplate_2.xls";
                     string[] properties = new string[] { "Name", "ValuePrev1", "ValuePrev2", "ValuePrev3", "ValuePrev4", "ValuePrev5", "ValuePrev6" };
-
-                    var fileName = "Report_" + Guid.NewGuid().ToString() + "_" + DateTime.Now.ToString("yyyyMMdd_HH_mm_ss") + ".xls";
-
-                    //string url = Path.Combine(serverUrl, fileName);
-                    //FileInfo file = new FileInfo(Path.Combine(tempFolder, fileName));
-
-                    //excelChartTemplateName = @"C:\Users\Gangadhar\Downloads\testsheet\Empty_Templates\FinalTemplate_officeXML.xlsx";//testNew_123.xls";
-
-                    Excel.Application xlApp;
-                    Excel.Workbook xlWorkBook;
-                    Excel.Worksheet xlWorkSheet;
-                    object misValue = System.Reflection.Missing.Value;
-
-                    xlApp = new Excel.Application();
-
-                    xlWorkBook = xlApp.Workbooks.Add(misValue);
-                    //xlWorkBook = xlApp.Workbooks.Open(excelChartTemplateName);
-                    xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
 
                     List<TListEntity> items = new List<TListEntity>();
                     foreach (var item in inputItems)
                     {
                         items.Add(item);
                     }
+                    Excel.Range chartRangeXaxis;
+                    Excel.Range chartRange;
                     var rangeToValue = "";
-                    string[] alphabetArray = new string[] { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
-                    for (int i = 0; i < items.Count; i++)
+                    var xAxisRangeToValue = "";
+                    int i = 0;
+                    var h = 0;
+                    int[] alphabetNumArray = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26 };
+
+                    int i_clear = 0;
+                    var h_clear = 0;
+                    //clearing existing values
+                    for (; i_clear < 4; i_clear++)//rows clearing
                     {
-                        for (var h = 0; h < properties.Length; h++)
+                        for (; h_clear < 4; h_clear++)//columns clearing
+                        {
+                            xlWorkSheet.Cells[(i_clear + 1), alphabetNumArray[h_clear]] = "";
+                        }
+                    }
+
+                    for (i = 0; i < items.Count(); i++)
+                    {
+                        for (h = 0; h < xAxisDataCount + 1; h++)
                         {
                             string propertyName = properties[h];
                             var property = items[i].GetType().GetProperty(propertyName);
                             if (property != null)
                             {
                                 var value = property.GetValue(items[i], null);
-                                if (value != null)//required to check, allow only non empty values
+                                if (value != null)//required to check, for not allowing empty values
                                 {
-                                    xlWorkSheet.Cells[alphabetArray[h] + (i + 2)] = value;
-                                    //xlWorkSheet.Cells["A2"] = value;
-                                    rangeToValue = alphabetArray[h] + (i + 2);
+                                    xlWorkSheet.Cells[(i + 1), alphabetNumArray[h]] = value;
+                                    //xlWorkSheet.Cells["A2"] = value;//this type was not works on microsoft.office.interop.excel
+                                    //xlWorkSheet.Cells[1,2] = value;//this is correct one
+
                                 }
+                                //else
+                                //    xlWorkSheet.Cells[(i + 1), alphabetNumArray[h]] = "";
                             }
                         }
                     }
+                    string[] alphabetArray = new string[] { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
 
-                    Excel.Range chartRange;
+                    rangeToValue = alphabetArray[xAxisDataCount] + i;
+                    xAxisRangeToValue = alphabetArray[xAxisDataCount] + 1;
+
 
                     Excel.ChartObjects xlCharts = (Excel.ChartObjects)xlWorkSheet.ChartObjects(Type.Missing);
-                    Excel.ChartObject myChart = (Excel.ChartObject)xlCharts.Add(10, 80, 300, 250);//for new one
-                    //Excel.ChartObject myChart = (Excel.ChartObject)xlCharts.Item(1);
-                    Excel.Chart chartPage = myChart.Chart;
+                    //Excel.ChartObject myChart = (Excel.ChartObject)xlCharts.Add(10, 80, 300, 250);//for new one
+                    Excel.ChartObject chartObject = (Excel.ChartObject)xlCharts.Item(1);
+                    Excel.Chart chart = chartObject.Chart;
 
-                    chartRange = xlWorkSheet.get_Range("A1", rangeToValue);
-                    chartPage.SetSourceData(chartRange, misValue);
-                    chartPage.ChartType = Excel.XlChartType.xlLineMarkers;//if new one comment this one
+                    chartRangeXaxis = xlWorkSheet.get_Range("B1", xAxisRangeToValue);
+                    chartRange = xlWorkSheet.get_Range("A2", rangeToValue);
+                    //chartPage.SetSourceData(chartRangeXaxis, Excel.XlRowCol.xlRows);
+                    chart.SetSourceData(chartRange, Excel.XlRowCol.xlRows);//sucess
+                                                                               //chartPage.ChartType = Excel.XlChartType.xlLineMarkers;//if creating new chart uncomment this one
+
+                    Excel.Axis xAxis = (Excel.Axis)chart.Axes(Excel.XlAxisType.xlCategory, Excel.XlAxisGroup.xlPrimary);
+
+                    xAxis.HasTitle = false;
+                    //xAxis.AxisTitle.Caption = "Time";
+                    xAxis.CategoryNames = (Excel.Range)xlWorkSheet.get_Range("B1", xAxisRangeToValue);
+
+                    Excel.Range formatRange;
+                    formatRange = xlWorkSheet.get_Range("B2", rangeToValue);
+                    formatRange.NumberFormat = "#,##0.00";
+
+                    //chartPage.ChartArea.Width = 200;
+                    //chartPage.ChartArea.Height = 100;
+
+                    // chartPage.CategoryLabelLevel = Excel.XlCategoryLabelLevel.xlCategoryLabelLevelCustom;
+                    //not working properly
+                    //Excel.SeriesCollection seriesCollection = (Excel.SeriesCollection)chartPage.SeriesCollection();
+                    //Excel.Series series = seriesCollection.NewSeries();
+                    //series.XValues = chartRangeXaxis;
+
+                    //have to set for data labels number format as 0.00
+                    //var series = chartObject.Chart.SeriesCollection() as Excel.SeriesCollection;
+                    //foreach (var ser in series)
+                    //{
+                    //    var DataLabels = ((Excel.Series)ser).DataLabels(1);
+                    //    DataLabels.
+                    //}
 
                     var imageFileFullName = outPutFolder + @"\ChartImage_" + DateTime.Now.ToString("yyyyMMdd_HH_mm_ss") + ".png";
-                    chartPage.Export(imageFileFullName, "PNG", false);
+                    chart.Export(imageFileFullName, "PNG", false);
 
-                    FileInfo file = new FileInfo(Path.Combine(outPutFolder, fileName));
+                    //xlWorkBook.SaveAs(outPutFolder + @"\Excel_" + DateTime.Now.ToString("yyyyMMdd_HH_mm_ss") + ".xlsx", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+                    xlWorkBook.SaveAs(outPutFolder + @"\Excel_" + DateTime.Now.ToString("yyyyMMdd_HH_mm_ss"), Excel.XlFileFormat.xlOpenXMLWorkbook, misValue, misValue, false, false, Excel.XlSaveAsAccessMode.xlNoChange, Excel.XlSaveConflictResolution.xlUserResolution, true, misValue, misValue, misValue);
 
-                    xlWorkBook.SaveAs(file.FullName, Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+                    //xlWorkBook.SaveAs(outPutFolder + @"\Excel_" + DateTime.Now.ToString("yyyyMMdd_HH_mm_ss") + ".xlsx", Excel.XlFileFormat.xlXMLSpreadsheet, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlShared, misValue, misValue, misValue, misValue, misValue);
                     xlWorkBook.Close(true, misValue, misValue);
                     xlApp.Quit();
 
@@ -550,17 +598,24 @@ namespace ReportGenerator
                     await this.releaseObject(xlWorkBook);
                     await this.releaseObject(xlApp);
 
-
-
                     byte[] byteArray = File.ReadAllBytes(imageFileFullName);
+
+                    System.IO.DirectoryInfo di = new DirectoryInfo(outPutFolder);
+
+                    foreach (FileInfo file in di.GetFiles())
+                    {
+                        file.Delete();
+                    }
 
                     return byteArray;
                 }
-            }
-            catch(Exception ex)
-            {
-
-            }
+                catch (Exception ex)
+                {
+                    await this.releaseObject(xlWorkSheet);
+                    await this.releaseObject(xlWorkBook);
+                    await this.releaseObject(xlApp);
+                }
+            }           
             return null;
         }
 
