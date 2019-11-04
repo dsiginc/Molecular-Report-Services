@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Xml;
 using Telerik.Reporting;
@@ -484,6 +485,8 @@ namespace ReportGenerator
 
                 outPutFolder = System.Configuration.ConfigurationManager.AppSettings["ChartOutputFolder"].ToString();//"C:\\ReportsGenerated\\Chart\\OutPuts";
                 excelChartTemplateName = System.Configuration.ConfigurationManager.AppSettings["ChartTemplate"].ToString();//"C:\\ReportsGenerated\\Chart\\InPuts\\FinalTemplate_Test_good_series_xaxis_1.xlsx"; //
+                Console.WriteLine(excelChartTemplateName);
+                Console.WriteLine(outPutFolder);
 
                 object misValue = System.Reflection.Missing.Value;
                 xlApp = new Excel.Application();
@@ -587,27 +590,54 @@ namespace ReportGenerator
                     var imageFileFullName = outPutFolder + @"\ChartImage_" + DateTime.Now.ToString("yyyyMMdd_HH_mm_ss") + ".png";
                     chart.Export(imageFileFullName, "PNG", false);
 
-                    //xlWorkBook.SaveAs(outPutFolder + @"\Excel_" + DateTime.Now.ToString("yyyyMMdd_HH_mm_ss") + ".xlsx", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
-                    xlWorkBook.SaveAs(outPutFolder + @"\Excel_" + DateTime.Now.ToString("yyyyMMdd_HH_mm_ss"), Excel.XlFileFormat.xlOpenXMLWorkbook, misValue, misValue, false, false, Excel.XlSaveAsAccessMode.xlNoChange, Excel.XlSaveConflictResolution.xlUserResolution, true, misValue, misValue, misValue);
+                  
 
-                    //xlWorkBook.SaveAs(outPutFolder + @"\Excel_" + DateTime.Now.ToString("yyyyMMdd_HH_mm_ss") + ".xlsx", Excel.XlFileFormat.xlXMLSpreadsheet, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlShared, misValue, misValue, misValue, misValue, misValue);
-                    xlWorkBook.Close(true, misValue, misValue);
-                    xlApp.Quit();
-
-                    await this.releaseObject(xlWorkSheet);
-                    await this.releaseObject(xlWorkBook);
-                    await this.releaseObject(xlApp);
-
-                    byte[] byteArray = File.ReadAllBytes(imageFileFullName);
-
-                    System.IO.DirectoryInfo di = new DirectoryInfo(outPutFolder);
-
-                    foreach (FileInfo file in di.GetFiles())
+                    try
                     {
-                        file.Delete();
+                        //xlWorkBook.SaveAs(outPutFolder + @"\Excel_" + DateTime.Now.ToString("yyyyMMdd_HH_mm_ss") + ".xlsx", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+                        xlWorkBook.SaveAs(outPutFolder + @"\Excel_" + DateTime.Now.ToString("yyyyMMddHHmmss")+DateTime.Now.Millisecond.ToString(), Excel.XlFileFormat.xlOpenXMLWorkbook, misValue, misValue, false, false, Excel.XlSaveAsAccessMode.xlNoChange, Excel.XlSaveConflictResolution.xlUserResolution, true, misValue, misValue, misValue);
+
+                        //xlWorkBook.SaveAs(outPutFolder + @"\Excel_" + DateTime.Now.ToString("yyyyMMdd_HH_mm_ss") + ".xlsx", Excel.XlFileFormat.xlXMLSpreadsheet, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlShared, misValue, misValue, misValue, misValue, misValue);
+                        xlWorkBook.Close(true, misValue, misValue);
+                        xlApp.Quit();
+
+                        await this.releaseObject(xlWorkSheet);
+                        await this.releaseObject(xlWorkBook);
+                        await this.releaseObject(xlApp);
+                    }
+                    catch(Exception ex)
+                    {
+                        Console.WriteLine("Error closing Excel object" + ex.Message);
+                        Console.WriteLine(ex.StackTrace);
+                    }
+                    finally
+                    {
+                        if (xlWorkSheet != null) Marshal.ReleaseComObject(xlWorkSheet);
+                        if (xlWorkBook != null) Marshal.ReleaseComObject(xlWorkBook);
+                        if (xlApp != null) Marshal.ReleaseComObject(xlApp);
                     }
 
-                    return byteArray;
+
+                    try
+                    {
+                        Console.WriteLine("Reading image");
+                        byte[] byteArray = File.ReadAllBytes(imageFileFullName);
+
+                        Console.WriteLine("Reading image 1");
+
+                        System.IO.DirectoryInfo di = new DirectoryInfo(outPutFolder);
+                        foreach (FileInfo file in di.GetFiles())
+                        {
+                            file.Delete();
+                        }
+                        return byteArray;
+                    }
+                    catch(Exception ex)
+                    {
+                        Console.WriteLine("Failed to delete " + ex.Message);
+                    }
+
+                    return null;
                 }
                 catch (Exception ex)
                 {
@@ -639,3 +669,4 @@ namespace ReportGenerator
         }
     }
 }
+
