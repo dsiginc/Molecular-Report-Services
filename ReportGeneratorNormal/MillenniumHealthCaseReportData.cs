@@ -67,6 +67,7 @@ namespace Molecular.DataAccess.AccessionService.Objects
 
         public bool ShowResistanceGenes { get; set; }
         public bool ShowComments { get; set; }
+        public string Phone { get; set; }
     }
     public class ResultSummery
     {
