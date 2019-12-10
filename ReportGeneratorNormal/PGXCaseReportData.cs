@@ -88,6 +88,7 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public string LabName { get; set; }
         public List<CurrentMedicationsList> CurrentMedicationsList { get; set; }
         public bool ShowCurrentMeds { get; set; }
+        public string LabAbbrevation { get; set; }
     }
     public class TestDetails
     {
