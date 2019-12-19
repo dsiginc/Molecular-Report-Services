@@ -218,8 +218,9 @@ namespace ReportGenerator
         {
             int seriesCount = dataSource.PreviousHistoryChartData.Select(x => x.Name).Distinct().Count();
             int xAxisDataCount = dataSource.PreviousHistoryChartData.Select(x => x.DateCollected).Distinct().Count();
-            dataSource.ChartData = await this.GenerateChartImageFromXlsxFile("", "", dataSource.PreviousHistoryExcelChartData, seriesCount, xAxisDataCount);
+            //dataSource.ChartData = await this.GenerateChartImageFromXlsxFile("", "", dataSource.PreviousHistoryExcelChartData, seriesCount, xAxisDataCount);
             Console.Write(dataSource.ToString());
+            Console.WriteLine(templateName);
             //string templateName = "ToxicologyAccessionCaseReport";
             string filePath = System.Configuration.ConfigurationManager.AppSettings["ReportTemplateLocation"].ToString() + "\\"+ templateName + ".trdx";
 
