@@ -53,6 +53,7 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public string InsuranceId { get; set; }
         public string InsuranceGroupName { get; set; }
         public string InsuranceGroupNumber { get; set; }
+        public string Subscriber { get; set; }
         public string ValidityOfPolicy { get; set; }
         public string PolicyId { get; set; }
         public string InsuredDOB { get; set; }
@@ -73,12 +74,16 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public bool ShowMedicalNecessity { get; set; }
 
         public string SpecimenID { get; set; }
+        public string EMRReference { get; set; }
         public string AccessionID { get; set; }
         public string LabDirector { get; set; }
         public string CliaID { get; set; }
         public string CollectionTime { get; set; }
         public string LabClientName { get; set; }
         public string LabClientAddress { get; set; }
+        public string LabClientContactPerson { get; set; }
+        public string LabClientPhone { get; set; }
+        public string LabClientFax { get; set; }
         public string LabClientNPI { get; set; }
         public string PatientLastName { get; set; }
         public string PatientFirstName { get; set; }
@@ -105,6 +110,7 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public string ReportCode { get; set; }
         public string LabLocation { get; set; }
         public string LabLocationForGivenLabClient { get; set; }
+        public string OrderNotes { get; set; }
     }
     public class BasicCustomDDO
     {
