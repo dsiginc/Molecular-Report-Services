@@ -68,6 +68,21 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public bool ShowResistanceGenes { get; set; }
         public bool ShowComments { get; set; }
         public string Phone { get; set; }
+        public bool OrganismsDetected { get; set; }
+        public bool ResistanceDetected { get; set; }
+        public List<UTIResultsSet> Results { get; set; }
+        public List<UTIResultsSet> ResistanceResults { get; set; }
+        public string CaseStatus { get; set; }
+    }
+    public class UTIResultsSet
+    {
+        public string TestCategory { get; set; }
+        public string TestName { get; set; }
+        public string Result { get; set; }
+        public double Concentration { get; set; }
+        public string ClinicalInterpretation { get; set; }
+        public string ResistanceSpectrum { get; set; }
+        public string Notes { get; set; }
     }
     public class ResultSummery
     {
@@ -81,6 +96,7 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public string SpectrumSuperscript { get; set; }
         public string GeneSuperscript { get; set; }
         public string CategorySuperscript { get; set; }
+        public double Concentration { get; set; }
     }
     public class Resistance
     {
