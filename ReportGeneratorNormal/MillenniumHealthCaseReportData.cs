@@ -30,6 +30,7 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public Dictionary<string, byte[]> ResultList { get; set; }
         public List<string> PositiveResults { get; set; }
         public List<ResultSummery> ResistanceGeneResultSummery { get; set; }
+        public List<ResultSummery> ResistanceGeneSummary { get; set; }
         public List<ResultSummery> OrganismsResultSummery { get; set; }
         public List<ResultSummery> VirulenceGeneResultSummery { get; set; }
         public string ResistanceGeneNote { get; set; }
@@ -97,6 +98,8 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public string GeneSuperscript { get; set; }
         public string CategorySuperscript { get; set; }
         public double Concentration { get; set; }
+        public string TestCode { get; set; }
+        public long TestResultId { get; set; }
     }
     public class Resistance
     {
