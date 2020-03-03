@@ -86,6 +86,14 @@ namespace ReportingService.WebApi.Controllers
             return await report.CreateToxicologyAccessionReport(reportInfo, templateName);
 
         }
+        [HttpPost("CreateQCDataReport")]
+        public async Task<string> CreateQCDataReport([FromBody]QCDataReport reportInfo)
+        {
+            string templateName = "QcDataReport";
+            ReportCreator report = new ReportCreator();
+            return await report.CreateQcDataReport(reportInfo, templateName);
+
+        }
         [HttpPost("CreateToxLabOrderRequisitionReport")]
         public async Task<string> CreateToxLabOrderRequisitionReport([FromBody]ToxLabOrderReportData reportInfo)
         {
