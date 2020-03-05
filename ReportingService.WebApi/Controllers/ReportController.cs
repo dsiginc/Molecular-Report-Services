@@ -104,6 +104,16 @@ namespace ReportingService.WebApi.Controllers
             return await report.CreateToxLabOrderRequisitionReport(reportInfo, templateName);
 
         }
+        [HttpPost("CreateToxLabOrderRequisitionReportForPGX")]
+        public async Task<string> CreateToxLabOrderRequisitionReportForPGX([FromBody]ToxLabOrderReportData reportInfo)
+        {
+            string templateName = "PGXRequisitionReport.trdx";
+            if (reportInfo != null && !string.IsNullOrEmpty(reportInfo.LabAbbreviation))
+                templateName = "PGXRequisitionReport" + "_" + reportInfo.LabAbbreviation + reportInfo.ReportCode + ".trdx";
+            ReportCreator report = new ReportCreator();
+            return await report.CreateToxLabOrderRequisitionReport(reportInfo, templateName);
+
+        }
         [HttpPost("CreateBloodChemistryRequisitionReport")]
         public async Task<string> CreateBloodChemistryRequisitionReport([FromBody]ToxLabOrderReportData reportInfo)
         {
