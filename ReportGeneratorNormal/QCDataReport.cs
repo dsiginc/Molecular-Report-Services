@@ -35,6 +35,7 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public DateTime Date { get; set; }
         public double Value { get; set; }
         public string QcControlName { get; set; }
+        public string CompoundName { get; set; }
         public long score { get; set; }
         public double Mean { get; set; }
         public double ThreeSD { get; set; }
