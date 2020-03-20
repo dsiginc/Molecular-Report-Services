@@ -75,6 +75,7 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public List<UTIResultsSet> ResistanceResults { get; set; }
         public string CaseStatus { get; set; }
         public List<LucidResults> LucidResultsWithQcControl { get; set; }
+        public string FinalInterPretation { get; set; }
     }
     public class UTIResultsSet
     {
