@@ -75,6 +75,13 @@ namespace ReportingService.WebApi.Controllers
             return await report.CreateLabOrdersReport(reportInfo);
 
         }
+        [HttpPost("CreateFaxCoverSheet")]
+        public async Task<string> CreateFaxCoverSheet([FromBody]FaxReportQueue reportInfo)
+        {
+            ReportCreator report = new ReportCreator();
+            return await report.CreateFaxCoverSheet(reportInfo);
+
+        }
         [HttpPost("CreateCaseReport")]
         public async Task<string> CreateToxicologyAccessionReport([FromBody]ReportCaseData reportInfo)
         {

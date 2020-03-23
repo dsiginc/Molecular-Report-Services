@@ -62,6 +62,7 @@
     <Compile Include="ChemicalTestReportData.cs" />
     <Compile Include="InvoiceReportData.cs" />
     <Compile Include="InsuranceDetail.cs" />
+    <Compile Include="FaxReportQueue.cs" />
     <Compile Include="MillenniumHealthCaseReportData.cs" />
     <Compile Include="BillingReportDataObject.cs" />
     <Compile Include="BRInsuranceCompanyInfo.cs" />
