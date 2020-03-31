@@ -82,6 +82,8 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public List<PreviousHistory> PreviousHistoryExcelChartData { get; set; }
         public List<BasicCustomDDO>[] ScreenResultsSplit { get; set; }
         public bool ShowScreenResults { get; set; }
+        public string ValidityComment { get; set; }
+        public string ValidityFlag { get; set; }
     }
     public class PreviousHistory
     {
