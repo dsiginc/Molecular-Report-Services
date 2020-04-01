@@ -44,6 +44,9 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public double MinusOneSD { get; set; }
         public double MinusTwoSD { get; set; }
         public double MinusThreeSD { get; set; }
+        public string Range { get; set; }
+        public double CV { get; set; }
+        public string Title { get; set; }
     }
     public class TableValueDataObj
     {
