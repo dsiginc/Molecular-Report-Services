@@ -22,6 +22,6 @@
         public long DisplayOrder { get; set; }
         public bool Expected { get; set; }
         public bool Inconsistent { get; set; }
-        public string ConcentrationForReport { get; set; }
+        public string ConcentrationForCalc { get; set; }
     }
 }
