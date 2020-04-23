@@ -74,6 +74,10 @@ namespace Molecular.DataAccess.ReportsService
         public string InsuranceId { get; set; }
         public string ValidityOfPolicy { get; set; }
         public string PolicyId { get; set; }
+
+        public string ResultVerifiedBy { get; set; }
+        public string AntiBodyTestResult { get; set; }
+        public string DateReviewed { get; set; }
     }
     public class TestCodes
     {
