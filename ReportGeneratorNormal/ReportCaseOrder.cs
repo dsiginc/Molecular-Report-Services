@@ -50,5 +50,6 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public string Icdcodes { get; set; }
 
         public string DateCreated { get; set; }
+        public string ReportStatus { get; set; }
     }
 }
