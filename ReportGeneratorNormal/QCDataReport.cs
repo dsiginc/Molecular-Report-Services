@@ -64,6 +64,7 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public string QcControlName { get; set; }
         public string QCPass { get; set; }
         public long score { get; set; }
+        public List<BasicCustomDDO>[] ToxQCDetailsSplit { get; set; }
     }
     public class RunQCDataResponseObj
     {
