@@ -44,5 +44,6 @@
         public string PrimaryCarePhysicianFax { get; set; }
         public string PrimaryCarePhysicianLocation { get; set; }
         public string PrimaryCarePhysicianZip { get; set; }
+        public string PatientCounty { get; set; }
     }
 }
