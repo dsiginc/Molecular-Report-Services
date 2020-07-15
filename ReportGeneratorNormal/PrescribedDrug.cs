@@ -8,7 +8,7 @@
         public string Concetration { get; set; }
         public string ConcetrationUnits { get; set; }
         public string DetectionWindow { get; set; }
-
+        public string CreatinineAdjustment { get; set; }
         public string Result { get; set; }
 
         public string Class { get; set; }
