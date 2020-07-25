@@ -355,6 +355,31 @@ namespace ReportGenerator
             RenderingResult result = reportProcessor.RenderReport("PDF", instanceReportSource, null);
             return Convert.ToBase64String(result.DocumentBytes);
         }
+
+        public async Task<string> CreateShippingContainerReport(ShippingContainerDataObject dataSource, string templateName)
+        {
+            string filePath = System.Configuration.ConfigurationManager.AppSettings["ReportTemplateLocation"].ToString() + "\\" + templateName + ".trdx";
+
+            XmlReaderSettings settings = new XmlReaderSettings();
+            settings.IgnoreWhitespace = true;
+
+            Telerik.Reporting.Report report = null;
+
+            using (XmlReader xmlReader = XmlReader.Create(filePath, settings))
+            {
+                ReportXmlSerializer xmlSerializer = new ReportXmlSerializer();
+                report = (Telerik.Reporting.Report)xmlSerializer.Deserialize(xmlReader);
+            }
+
+            report.DataSource = dataSource;
+
+
+            ReportProcessor reportProcessor = new ReportProcessor();
+            InstanceReportSource instanceReportSource = new InstanceReportSource();
+            instanceReportSource.ReportDocument = report;
+            RenderingResult result = reportProcessor.RenderReport("PDF", instanceReportSource, null);
+            return Convert.ToBase64String(result.DocumentBytes);
+        }
         public async Task<string> CreateToxLabOrderRequisitionReport(ToxLabOrderReportData dataSource, string templateName= "ToxLabOrderRequisitionReport.trdx")
         {
             
