@@ -86,6 +86,7 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public string ValidityFlag { get; set; }
         public string ConfirmedAnalytes { get; set; }
         public List<BasicCustomDDO>[] ScreensSplit { get; set; }
+        public List<ReportCaseResult> ReportCaseResultsWithNoGroup { get; set; }
     }
     public class PreviousHistory
     {
