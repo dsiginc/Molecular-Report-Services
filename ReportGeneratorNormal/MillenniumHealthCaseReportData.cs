@@ -76,6 +76,7 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public string CaseStatus { get; set; }
         public List<LucidResults> LucidResultsWithQcControl { get; set; }
         public string FinalInterPretation { get; set; }
+        public string PatientContactNumber { get; set; }
     }
     public class UTIResultsSet
     {
