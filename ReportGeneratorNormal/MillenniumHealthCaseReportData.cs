@@ -79,6 +79,14 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public string PatientContactNumber { get; set; }
         public string PathologistName { get; set; }
         public string LabAddress { get; set; }
+        public string LabPhone { get; set; }
+        public string LabFax { get; set; }
+        public string ProviderNPI { get; set; }
+        public string LabClientPhone { get; set; }
+        public string LabClientFax { get; set; }
+        public long PatientId { get; set; }
+        public string PatientRace { get; set; }
+        public string PatientAddress { get; set; }
     }
     public class UTIResultsSet
     {
