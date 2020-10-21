@@ -87,6 +87,7 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public long PatientId { get; set; }
         public string PatientRace { get; set; }
         public string PatientAddress { get; set; }
+        public string Tests { get; set; }
     }
     public class UTIResultsSet
     {
