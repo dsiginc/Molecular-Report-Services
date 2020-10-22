@@ -100,6 +100,12 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public string LabClientState { get; set; }
         public string LabClientCountry { get; set; }
         public string LabClientZip { get; set; }
+        public string LabAddress1 { get; set; }
+        public string LabAddress2 { get; set; }
+        public string LabCity { get; set; }
+        public string LabState { get; set; }
+        public string LabCountry { get; set; }
+        public string LabZip { get; set; }
     }
     public class UTIResultsSet
     {
