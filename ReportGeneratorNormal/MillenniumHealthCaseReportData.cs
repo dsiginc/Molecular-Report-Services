@@ -88,6 +88,18 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public string PatientRace { get; set; }
         public string PatientAddress { get; set; }
         public string Tests { get; set; }
+        public string PatientAddress1 { get; set; }
+        public string PatientAddress2 { get; set; }
+        public string PatientCity { get; set; }
+        public string PatientState { get; set; }
+        public string PatientCountry { get; set; }
+        public string PatientZip { get; set; }
+        public string LabClientAddress1 { get; set; }
+        public string LabClientAddress2 { get; set; }
+        public string LabClientCity { get; set; }
+        public string LabClientState { get; set; }
+        public string LabClientCountry { get; set; }
+        public string LabClientZip { get; set; }
     }
     public class UTIResultsSet
     {
