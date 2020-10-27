@@ -79,6 +79,8 @@ namespace Molecular.DataAccess.ReportsService
         public string AntiBodyTestResult { get; set; }
         public string DateReviewed { get; set; }
         public string ResultComments { get; set; }
+        public string OrderNotes { get; set; }
+        public string EMRReference { get; set; }
     }
     public class TestCodes
     {
