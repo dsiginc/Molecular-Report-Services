@@ -22,6 +22,9 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
             PrescribedDrugsNegativeGroupBy = new List<PrescribedDrugList>();
             PreviousHistoryChartData = new List<PreviousHistoryChartData>();
             PreviousHistoryExcelChartData = new List<PreviousHistory>();
+
+            IsomerResultsNegative = new List<PrescribedDrug>();
+            IsomerResultsPositive = new List<PrescribedDrug>();
         }
         public string FolderPath { get; set; }
         public string ServerUrl { get; set; }
@@ -87,6 +90,11 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public string ConfirmedAnalytes { get; set; }
         public List<BasicCustomDDO>[] ScreensSplit { get; set; }
         public List<ReportCaseResult> ReportCaseResultsWithNoGroup { get; set; }
+
+        public List<PrescribedDrug> IsomerResultsNegative { get; set; }
+        public List<PrescribedDrug> IsomerResultsPositive { get; set; }
+        public bool ShowIsomerResultsNegative { get; set; }
+        public bool ShowIsomerResultsPositive { get; set; }
     }
     public class PreviousHistory
     {

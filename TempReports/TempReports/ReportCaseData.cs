@@ -18,6 +18,9 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
             PrescribedDrugsGroupBy = new List<PrescribedDrugList>();
             PrescribedDrugsNegativeGroupBy = new List<PrescribedDrugList>();
             PreviousHistoryChartData = new List<PreviousHistoryChartData>();
+
+            IsomerResultsNegative = new List<PrescribedDrug>();
+            IsomerResultsPositive = new List<PrescribedDrug>();
         }
         public string FolderPath { get; set; }
         public string ServerUrl { get; set; }
@@ -62,6 +65,11 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public bool ShowPresDrugsPositive { get; set; }
         public bool ShowNonPresDrugsPositive { get; set; }
         public byte[] ChartData { get; set; }
+
+        public List<PrescribedDrug> IsomerResultsNegative { get; set; }
+        public List<PrescribedDrug> IsomerResultsPositive { get; set; }
+        public bool ShowIsomerResultsNegative { get; set; }
+        public bool ShowIsomerResultsPositive { get; set; }
     }
     public class PrescribedDrugList
     {
