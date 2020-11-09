@@ -111,6 +111,8 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public string LabLocation { get; set; }
         public string LabLocationForGivenLabClient { get; set; }
         public string OrderNotes { get; set; }
+        public List<string> ICDCodeList { get; set; }
+        public List<string> InsuranceCompanyTypes { get; set; }
     }
     public class BasicCustomDDO
     {
