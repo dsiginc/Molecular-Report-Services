@@ -30,7 +30,9 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public ReportCaseResultList()
         {
             CaseResults = new List<ReportCaseResult>();
+            CaseResultsWithNoQualAndPresumptive = new List<ReportCaseResult>();
         }
         public List<ReportCaseResult> CaseResults { get; set; }
+        public List<ReportCaseResult> CaseResultsWithNoQualAndPresumptive { get; set; }
     }
 }
