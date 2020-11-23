@@ -25,6 +25,7 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
 
             IsomerResultsNegative = new List<PrescribedDrug>();
             IsomerResultsPositive = new List<PrescribedDrug>();
+            ImmunoassayScreenResults = new List<PrescribedDrug>();
         }
         public string FolderPath { get; set; }
         public string ServerUrl { get; set; }
@@ -95,6 +96,7 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public List<PrescribedDrug> IsomerResultsPositive { get; set; }
         public bool ShowIsomerResultsNegative { get; set; }
         public bool ShowIsomerResultsPositive { get; set; }
+        public List<PrescribedDrug> ImmunoassayScreenResults { get; set; }
     }
     public class PreviousHistory
     {
@@ -106,6 +108,7 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public string ValuePrev5 { get; set; }
         public string ValuePrev6 { get; set; }
         public string ShowColor { get; set; }
+        public string Class { get; set; }
     }
     public class PrescribedDrugList
     {
