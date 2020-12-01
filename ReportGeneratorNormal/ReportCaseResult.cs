@@ -33,5 +33,6 @@
         public string Units { get; set; }
         public string ApplyColor { get; set; }
         public string ResultForScreens { get; set; }
+        public string ResultType { get; set; }
     }
 }
