@@ -106,6 +106,8 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public string LabState { get; set; }
         public string LabCountry { get; set; }
         public string LabZip { get; set; }
+        public string PathologistLastName { get; set; }
+        public string PathologistFirstName { get; set; }
     }
     public class UTIResultsSet
     {
