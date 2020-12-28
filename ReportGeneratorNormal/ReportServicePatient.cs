@@ -45,5 +45,7 @@
         public string PrimaryCarePhysicianLocation { get; set; }
         public string PrimaryCarePhysicianZip { get; set; }
         public string PatientCounty { get; set; }
+        public string Race { get; set; }
+        public string Ethnicity { get; set; }
     }
 }
