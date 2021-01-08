@@ -117,16 +117,6 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public string ValuePrev14 { get; set; }
         public string ValuePrev15 { get; set; }
         public string ValuePrev16 { get; set; }
-        public string ValuePrev17 { get; set; }
-        public string ValuePrev18 { get; set; }
-        public string ValuePrev19 { get; set; }
-        public string ValuePrev20 { get; set; }
-        public string ValuePrev21 { get; set; }
-        public string ValuePrev22 { get; set; }
-        public string ValuePrev23 { get; set; }
-        public string ValuePrev24 { get; set; }
-        public string ValuePrev25 { get; set; }
-        public string ValuePrev26 { get; set; }
         public string ShowColor { get; set; }
         public string Class { get; set; }
     }
