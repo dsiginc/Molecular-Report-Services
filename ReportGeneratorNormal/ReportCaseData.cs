@@ -25,7 +25,7 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
 
             IsomerResultsNegative = new List<PrescribedDrug>();
             IsomerResultsPositive = new List<PrescribedDrug>();
-           // ImmunoassayScreenResults = new List<PrescribedDrug>();
+            ImmunoassayScreenResults = new List<PrescribedDrug>();
         }
         public string FolderPath { get; set; }
         public string ServerUrl { get; set; }
@@ -96,7 +96,7 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public List<PrescribedDrug> IsomerResultsPositive { get; set; }
         public bool ShowIsomerResultsNegative { get; set; }
         public bool ShowIsomerResultsPositive { get; set; }
-        //public List<PrescribedDrug> ImmunoassayScreenResults { get; set; }
+        public List<PrescribedDrug> ImmunoassayScreenResults { get; set; }
         public string OrderNumber { get; set; }
         public string AbnormalValidityResults { get; set; }
         public string ConsistentPositives { get; set; }
