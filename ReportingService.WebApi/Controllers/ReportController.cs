@@ -174,6 +174,14 @@ namespace ReportingService.WebApi.Controllers
             return await report.CreateToxBillingReport(billingInfo);
 
         }// POS
+        [HttpPost("CreatePCRBillingReport")]
+        public async Task<string> CreatePCRBillingReport([FromBody]BillingReportDataObject billingInfo)
+        {
+            ReportCreator report = new ReportCreator();
+            return await report.CreatePCRBillingReport(billingInfo);
+
+        }
+
         [HttpPost("CreateMillenniumHealthReport")]
         public async Task<string> CreateMillenniumHealthReport([FromBody]string json)
         {
