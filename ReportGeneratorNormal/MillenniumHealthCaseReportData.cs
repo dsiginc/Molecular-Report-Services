@@ -107,6 +107,13 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public string LabCountry { get; set; }
         public string LabZip { get; set; }
         public int Age { get; set; }
+        public List<CTResultDetails> CTResultDetails { get; set; }
+        public bool CTResultDetailsExists { get; set; }
+    }
+    public class CTResultDetails
+    {
+        public string TargetName { get; set; }
+        public string CTValue { get; set; }
     }
     public class UTIResultsSet
     {
