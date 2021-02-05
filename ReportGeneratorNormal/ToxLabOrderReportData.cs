@@ -113,6 +113,7 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public string OrderNotes { get; set; }
         public List<string> ICDCodeList { get; set; }
         public List<string> InsuranceCompanyTypes { get; set; }
+        public string AdditionalCompounds { get; set; }
     }
     public class BasicCustomDDO
     {
