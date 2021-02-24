@@ -102,6 +102,13 @@ namespace Molecular.DataAccess.ToxicologyAccessionService
         public string ConsistentPositives { get; set; }
         public string InconsistentPositives { get; set; }
         public string InconsistentNegatives { get; set; }
+
+        public bool ShowConsistentResults { get; set; }
+        public bool ShowInconsistentResultsNegatives { get; set; }
+        public bool ShowInconsistentResultsPositives { get; set; }
+        public bool ShowOtherNegativeTests { get; set; }
+        public bool ShowImmunoassayScreenResults { get; set; }
+        public bool ShowDetailedReport { get; set; }
     }
     public class PreviousHistory
     {
