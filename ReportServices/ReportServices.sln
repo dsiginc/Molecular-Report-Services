@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportServices", "ReportServices.csproj", "{EB9520C6-F131-433B-BDA9-C44E5DD41710}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportGeneratorNormal", "..\ReportGeneratorNormal\ReportGeneratorNormal.csproj", "{561A3556-B2E2-48E7-BFAE-162316140FD1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB9520C6-F131-433B-BDA9-C44E5DD41710}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB9520C6-F131-433B-BDA9-C44E5DD41710}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB9520C6-F131-433B-BDA9-C44E5DD41710}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB9520C6-F131-433B-BDA9-C44E5DD41710}.Release|Any CPU.Build.0 = Release|Any CPU
+		{561A3556-B2E2-48E7-BFAE-162316140FD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{561A3556-B2E2-48E7-BFAE-162316140FD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{561A3556-B2E2-48E7-BFAE-162316140FD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{561A3556-B2E2-48E7-BFAE-162316140FD1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E0266E00-8254-4753-BFF4-CECA647419E9}
+	EndGlobalSection
+EndGlobal

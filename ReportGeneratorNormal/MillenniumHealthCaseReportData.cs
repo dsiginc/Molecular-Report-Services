@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Molecular.DataAccess.AccessionService.Objects
 {
-
     public class MillenniumHealthCaseReportData
     {
         public string TemplateName { get; set; }
@@ -48,6 +50,7 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public bool LegendDetected { get; set; }
         public bool LegendNotOrdered { get; set; }
         public bool LegendUTD { get; set; }
+
         public string CaseComments { get; set; }
 
         public string DateAmended { get; set; }
@@ -55,14 +58,16 @@ namespace Molecular.DataAccess.AccessionService.Objects
         public bool IsCorrected { get; set; }
         public string AmendedReason { get; set; }
         public string WoundOrientation { get; set; }
+
         public string DetailedTestResultSuperscript { get; set; }
-        public byte[] LabLogo { get; set; }
-        public string LabCLIA { get; set; }
-        public string LabDirector { get; set; }
         public List<Resistance> Resistances { get; set; }
         public List<LucidResults> LucidResults_Left { get; set; }
         public List<LucidResults> LucidResults_Right { get; set; }
         public bool ResistanceSummeryExist { get; set; }
+
+        public byte[] LabLogo { get; set; }
+        public string LabCLIA { get; set; }
+        public string LabDirector { get; set; }
         public string ProfilesOrdered { get; set; }
         //Test Results - Will hard the tables on the report with the test names but need to find a way to set on the report.
 
